@@ -106,11 +106,11 @@ namespace saEdu
                                "\"mobileNo0\":\"" + new_mob_no.Text + "\"," +
                                "\"mobileNo1\":\"" + new_conformmob_no.Text + "\"," +
                                "\"email\":\"" + new_email.Text + "\"}";
-                JObject newUser = JObject.Parse(json);
+                JObject userInfo = JObject.Parse(json);
                 //string newUserstr = JsonConvert.SerializeObject(nv);
                 //JObject newUser = JObject.Parse(newUserstr);
                 //MessageBox.Show(Convert.ToString(newUser.GetType()));
-                streamWriter.Write(newUser);
+                streamWriter.Write(userInfo);
                 streamWriter.Flush();
                 streamWriter.Close();
             }

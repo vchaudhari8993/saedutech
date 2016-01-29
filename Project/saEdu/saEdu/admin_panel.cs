@@ -215,7 +215,9 @@ namespace saEdu
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            cr_dr_detail cr = new cr_dr_detail();
+            cr.Show();
+            this.Hide();
         }
 
         private void addNewUserToolStripMenuItem_Click(object sender, EventArgs e)

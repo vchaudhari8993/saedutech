@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Net;
+using Newtonsoft.Json.Linq;
 using System.Collections.Specialized;
 using System.Configuration;
 using System.Collections;
@@ -29,11 +30,11 @@ namespace saEdu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url+"/user_login/");
-            httpWebRequest.ContentType = "text/json";
-            httpWebRequest.Method = "POST";
             try
             {
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/user_login/");
+                httpWebRequest.ContentType = "text/json";
+                httpWebRequest.Method = "POST";
                 using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
                     string user = log_user.Text;
@@ -49,9 +50,12 @@ namespace saEdu
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
                     var result = streamReader.ReadToEnd();
-                    if(result.Substring(11,5)=="false")
+                    JToken response = JToken.Parse(result);
+                    JToken jt= response["status"];
+                    if (Convert.ToString(jt).Contains("False"))
                     {
-                        MessageBox.Show("Invalid Login! Please try again.","Login Error!",MessageBoxButtons.RetryCancel,MessageBoxIcon.Error);
+
+                        MessageBox.Show("Invalid Login! Please try again.", "Login Error!", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                         log_user.Clear();
                         log_pass.Clear();
                         log_user.Focus();

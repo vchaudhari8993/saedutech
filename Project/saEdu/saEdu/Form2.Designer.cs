@@ -160,6 +160,7 @@
             this.roundButton2.Text = "A+";
             this.toolTip1.SetToolTip(this.roundButton2, "Add Account");
             this.roundButton2.UseVisualStyleBackColor = false;
+            this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
             // 
             // roundButton1
             // 

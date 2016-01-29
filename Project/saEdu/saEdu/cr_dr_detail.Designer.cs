@@ -30,10 +30,10 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.roundButton3 = new RoundButton();
-            this.roundButton2 = new RoundButton();
-            this.roundButton1 = new RoundButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.roundButton3 = new RoundButton();
+            this.roundButton1 = new RoundButton();
+            this.roundButton2 = new RoundButton();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.cr_panel = new System.Windows.Forms.Panel();
@@ -72,6 +72,18 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "validity";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(163, 25);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "My Account/Books";
+            // 
             // roundButton3
             // 
             this.roundButton3.BackColor = System.Drawing.Color.RoyalBlue;
@@ -83,18 +95,6 @@
             this.roundButton3.TabIndex = 2;
             this.roundButton3.Text = "G+";
             this.roundButton3.UseVisualStyleBackColor = false;
-            // 
-            // roundButton2
-            // 
-            this.roundButton2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.roundButton2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton2.ForeColor = System.Drawing.Color.White;
-            this.roundButton2.Location = new System.Drawing.Point(313, 5);
-            this.roundButton2.Name = "roundButton2";
-            this.roundButton2.Size = new System.Drawing.Size(45, 45);
-            this.roundButton2.TabIndex = 1;
-            this.roundButton2.Text = "A+";
-            this.roundButton2.UseVisualStyleBackColor = false;
             // 
             // roundButton1
             // 
@@ -108,17 +108,18 @@
             this.roundButton1.Text = "Y+";
             this.roundButton1.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // roundButton2
             // 
-            this.label1.AutoSize = true;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Location = new System.Drawing.Point(3, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 25);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "My Account/Books";
+            this.roundButton2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.roundButton2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundButton2.ForeColor = System.Drawing.Color.White;
+            this.roundButton2.Location = new System.Drawing.Point(313, 5);
+            this.roundButton2.Name = "roundButton2";
+            this.roundButton2.Size = new System.Drawing.Size(45, 45);
+            this.roundButton2.TabIndex = 1;
+            this.roundButton2.Text = "A+";
+            this.roundButton2.UseVisualStyleBackColor = false;
+            this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
             // 
             // button1
             // 

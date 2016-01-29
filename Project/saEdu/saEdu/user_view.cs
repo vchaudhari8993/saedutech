@@ -17,7 +17,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Web.Script.Serialization;
 using System.Text.RegularExpressions;
-//using System.Runtime.Serialization.Json;
 namespace saEdu
 {
     public partial class user_acc : Form
@@ -61,29 +60,47 @@ namespace saEdu
 
         private void user_view_Load(object sender, EventArgs e)
         {
-            //long int_data;
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url+"/list_of_accounting_years/");//list_of_accounting_years
+            long int_data;
+            DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            DataTable dt = new DataTable();
+            DateTime d,d1;
+            
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url+"/list_of_accounting_years/");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
             var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
             using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
                 var result = streamReader.ReadToEnd();
-                MessageBox.Show(result);
-                var obj = JObject.Parse(result);
-                var data = Convert.ToString(obj["AccYearsList"][0]);
-                /* Logic for print int (startdate)
-                data = Regex.Match(data, @"\d+").Value;
-                int_data = Int32.Parse(data);
-                MessageBox.Show(Convert.ToString(int_data));
-                */
-                data = Convert.ToString(obj["AccYearsList"][1]);
-                /* Logic for print int (enddate)
-                data = Regex.Match(data, @"\d+").Value;
-                int_data = Int32.Parse(data);
-                MessageBox.Show(Convert.ToString(int_data));
-                */
+                //MessageBox.Show(result);
+                JObject obj = JObject.Parse(result);
+                
+                dt.Columns.Add("Start Date");
+                dt.Columns.Add("End Date");
+                var data="";
 
+                string str1=(Convert.ToString(obj["AccYearsList"]));
+                int counter=0;
+                foreach(var ch in str1)
+                {
+                    if(ch=='s'||ch=='n')
+                        counter++;
+                }
+                for (int i = 0; i < counter; i++)
+                {
+                    data = Convert.ToString(obj["AccYearsList"][i]);
+                    data = Regex.Match(data, @"\d+").Value;
+                    int_data = Int32.Parse(data);
+                    d = origin.AddSeconds(int_data);
+
+                    data = Convert.ToString(obj["AccYearsList"][++i]);
+                    data = Regex.Match(data, @"\d+").Value;
+                    int_data = Int32.Parse(data);
+                    d1 = origin.AddSeconds(int_data);
+
+                    dt.Rows.Add(Convert.ToString(d).Substring(0, 9), Convert.ToString(d1).Substring(0, 9));
+                    dataGridView1.DataSource = dt;
+                }
             }
         }
 
@@ -178,6 +195,11 @@ namespace saEdu
             user_acc_detail ud = new user_acc_detail();
             ud.Show();
             this.Hide();
+        }
+
+        private void roundButton2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

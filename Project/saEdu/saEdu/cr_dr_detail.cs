@@ -56,5 +56,12 @@ namespace saEdu
         {
             Application.Exit();
         }
+
+        private void roundButton2_Click(object sender, EventArgs e)
+        {
+            newUserAcc n = new newUserAcc();
+            n.Show();
+            this.Hide();
+        }
     }
 }

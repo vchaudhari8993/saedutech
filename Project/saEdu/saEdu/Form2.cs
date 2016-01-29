@@ -16,6 +16,7 @@ using ExtensionMethods;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Web.Script.Serialization;
+using System.Text.RegularExpressions;
 
 namespace saEdu
 {
@@ -70,21 +71,53 @@ namespace saEdu
 
         private void user_acc_detail_Load(object sender, EventArgs e)
         {
+            /*
+            long int_data;
+            DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            DataTable dt = new DataTable();
+            DateTime d, d1;
+            */
+            //code for getting my cash account
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url+"/my_cash_accounts/");
-            var httpWebRequest1 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/my_bank_accounts/");
-           
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
-            httpWebRequest1.ContentType = "application/json";
-            httpWebRequest1.Method = "POST";
             var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
             using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
                 var result = streamReader.ReadToEnd();
                 MessageBox.Show(result);
-                
+                /*
+                var data = "";
+                JObject obj = JObject.Parse(result);
+                string str1 = (Convert.ToString(obj["cash_acc_balance_list"]));
+                int counter = 0;
+                foreach (var ch in str1)
+                {
+                    if (ch == 's' || ch == 'n')
+                        counter++;
+                }
+                for (int i = 0; i < counter; i++)
+                {
+                    data = Convert.ToString(obj["AccYearsList"][i]);
+                    data = Regex.Match(data, @"\d+").Value;
+                    int_data = Int32.Parse(data);
+                    d = origin.AddSeconds(int_data);
 
+                    data = Convert.ToString(obj["AccYearsList"][++i]);
+                    data = Regex.Match(data, @"\d+").Value;
+                    int_data = Int32.Parse(data);
+                    d1 = origin.AddSeconds(int_data);
+
+                    dt.Rows.Add(Convert.ToString(d).Substring(0, 9), Convert.ToString(d1).Substring(0, 9));
+                    dataGridView1.DataSource = dt;
+                }
+                */
             }
+
+            //code for my bank account data
+            var httpWebRequest1 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/my_bank_accounts/");
+            httpWebRequest1.ContentType = "application/json";
+            httpWebRequest1.Method = "POST";
             var httpResponse1 = (HttpWebResponse)httpWebRequest1.GetResponse();
             using (var streamReader1 = new StreamReader(httpResponse1.GetResponseStream()))
             {
@@ -108,15 +141,33 @@ namespace saEdu
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var httpWebRequest3 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/show_all_creditors/");
-            httpWebRequest3.ContentType = "application/json";
-            httpWebRequest3.Method = "POST";
-            var httpResponse3 = (HttpWebResponse)httpWebRequest3.GetResponse();
-            using (var streamReader3 = new StreamReader(httpResponse3.GetResponseStream()))
+            try
             {
-                var result3 = streamReader3.ReadToEnd();
-                MessageBox.Show(result3);
+                var httpWebRequest3 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/show_all_creditors/");
+                httpWebRequest3.ContentType = "application/json";
+                httpWebRequest3.Method = "POST";
+                var httpResponse3 = (HttpWebResponse)httpWebRequest3.GetResponse();
+
+                try
+                {
+                    using (var streamReader3 = new StreamReader(httpResponse3.GetResponseStream()))
+                    {
+                        var result3 = streamReader3.ReadToEnd();
+                        MessageBox.Show(result3);
+                    }
+                }
+                catch
+                {
+                    //MessageBox.Show("No responce from server");
+                }
             }
+            catch
+            {
+                MessageBox.Show("Unable to connect server");
+            }
+        }
+        private void roundButton2_Click(object sender, EventArgs e)
+        {
 
         }
     }
