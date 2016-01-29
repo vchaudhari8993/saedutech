@@ -96,12 +96,16 @@
             // 
             // log_user
             // 
+            this.log_user.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.log_user.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
             this.log_user.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.log_user.ForeColor = System.Drawing.Color.RoyalBlue;
             this.log_user.Location = new System.Drawing.Point(122, 14);
             this.log_user.Name = "log_user";
             this.log_user.Size = new System.Drawing.Size(194, 31);
             this.log_user.TabIndex = 0;
+            this.log_user.TextChanged += new System.EventHandler(this.log_user_TextChanged);
+            this.log_user.Enter += new System.EventHandler(this.log_user_Enter);
             // 
             // label3
             // 

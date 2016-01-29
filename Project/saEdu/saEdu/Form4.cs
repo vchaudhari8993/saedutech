@@ -33,10 +33,6 @@ namespace saEdu
 
         private void newUserAcc_Load(object sender, EventArgs e)
         {
-            foreach(TextBox t in this.Controls)
-            {
-                t.Text = "Hello";
-            }
             var httpWebRequest1 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/get_groups_from_db/");
             httpWebRequest1.ContentType = "application/json";
             httpWebRequest1.Method = "POST";

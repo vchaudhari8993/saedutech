@@ -92,5 +92,15 @@ namespace saEdu
         {
 
         }
+
+        private void log_user_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void log_user_Enter(object sender, EventArgs e)
+        {
+            log_user.Clear();
+        }
     }
 }
