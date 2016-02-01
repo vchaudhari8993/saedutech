@@ -111,5 +111,17 @@ namespace saEdu
                 MessageBox.Show("error");
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            cr_dr_detail cr = new cr_dr_detail();
+            cr.Show();
+            this.Hide();
+        }
     }
 }

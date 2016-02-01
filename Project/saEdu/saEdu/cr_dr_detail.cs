@@ -18,7 +18,6 @@ namespace saEdu
 
         private void cr_dr_detail_Load(object sender, EventArgs e)
         {
-            dr_panel.Hide();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -28,14 +27,10 @@ namespace saEdu
 
         private void button2_Click(object sender, EventArgs e)
         {
-            cr_panel.Hide();
-            dr_panel.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dr_panel.Hide();
-            cr_panel.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)

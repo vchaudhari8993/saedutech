@@ -141,5 +141,10 @@ namespace saEdu
                 }
             }
         }
+
+        private void progressBar1_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }

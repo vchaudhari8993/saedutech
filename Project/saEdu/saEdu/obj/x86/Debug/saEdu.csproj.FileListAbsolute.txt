@@ -53,3 +53,4 @@ K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.csproj.GenerateResource.Cache
 E:\WORK\Project\saEdu\saEdu\bin\Debug\Json.dll
 E:\WORK\Project\saEdu\saEdu\bin\Debug\Json.pdb
 E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.newUserAcc.resources
+E:\WORK\Project\saEdu\saEdu\bin\Debug\RequestStrap.dll

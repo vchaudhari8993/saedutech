@@ -14,6 +14,7 @@ using System.Collections;
 using System.Web;
 using ExtensionMethods;
 using Newtonsoft.Json;
+using System.Web.ClientServices;
 using Newtonsoft.Json.Linq;
 using System.Web.Script.Serialization;
 using System.Text.RegularExpressions;
@@ -64,43 +65,65 @@ namespace saEdu
             DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
             DataTable dt = new DataTable();
             DateTime d,d1;
+
+            //bool val1 = (System.Web.HttpContext.Current.User != null) && System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
             
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url+"/list_of_accounting_years/");
-            httpWebRequest.ContentType = "application/json";
-            httpWebRequest.Method = "POST";
-            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            //AuthenticationManager.Authenticate("",)
+            try
             {
-                var result = streamReader.ReadToEnd();
-                //MessageBox.Show(result);
-                JObject obj = JObject.Parse(result);
-                
-                dt.Columns.Add("Start Date");
-                dt.Columns.Add("End Date");
-                var data="";
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/list_of_accounting_years/");
 
-                string str1=(Convert.ToString(obj["AccYearsList"]));
-                int counter=0;
-                foreach(var ch in str1)
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
+                httpWebRequest.CookieContainer = new CookieContainer();
+                httpWebRequest.CookieContainer.Add(new Uri(GlobalClass.url + "/list_of_accounting_years/"), new Cookie("sessionid", GlobalClass.session));
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
-                    if(ch=='s'||ch=='n')
-                        counter++;
-                }
-                for (int i = 0; i < counter; i++)
-                {
-                    data = Convert.ToString(obj["AccYearsList"][i]);
-                    data = Regex.Match(data, @"\d+").Value;
-                    int_data = Int32.Parse(data);
-                    d = origin.AddSeconds(int_data);
+                    var result = streamReader.ReadToEnd();
+                    //MessageBox.Show(result);
+                    JObject obj = JObject.Parse(result);
+                    dt.Columns.Add("Start Date");
+                    dt.Columns.Add("End Date");
+                    //var data = "";
 
-                    data = Convert.ToString(obj["AccYearsList"][++i]);
-                    data = Regex.Match(data, @"\d+").Value;
-                    int_data = Int32.Parse(data);
-                    d1 = origin.AddSeconds(int_data);
+                    /*JToken accYr= (JToken)(obj["AccYearsList"][0]);
+                    MessageBox.Show(Convert.ToString(accYr["start_date"]));*/
+                    string str1 = (Convert.ToString(obj["AccYearsList"]));
+                    //MessageBox.Show(str1);
+                    int counter = 0;
+                    JToken accYr;
+                    foreach (var ch in str1)
+                    {
+                        if (ch == 's')
+                            counter++;
+                    }
+                    
+                    for (int i = 0; i < counter; i++)
+                    {
 
-                    dt.Rows.Add(Convert.ToString(d).Substring(0, 9), Convert.ToString(d1).Substring(0, 9));
-                    dataGridView1.DataSource = dt;
+                        accYr = (JToken)(obj["AccYearsList"][i]);
+                        //MessageBox.Show(Convert.ToString(accYr["start_date"]));
+                        //MessageBox.Show(Convert.ToString(accYr["end_date"]));
+                        
+                        int_data = Int32.Parse(Convert.ToString(accYr["start_date"]));
+                        d = origin.AddSeconds(int_data);
+                        int_data = Int32.Parse(Convert.ToString(accYr["end_date"]));
+                        d1 = origin.AddSeconds(int_data);
+
+                        //data = Convert.ToString(obj["AccYearsList"][++i]);
+                        //data = Regex.Match(data, @"\d+").Value;
+                        //int_data = Int32.Parse(data);
+                        //d1 = origin.AddSeconds(int_data);
+
+                        dt.Rows.Add(Convert.ToString(d).Substring(0, 9), Convert.ToString(d1).Substring(0, 9));
+                        dataGridView1.DataSource = dt;
+                    }
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Oops! Something went Wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

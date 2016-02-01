@@ -78,51 +78,65 @@ namespace saEdu
             DateTime d, d1;
             */
             //code for getting my cash account
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url+"/my_cash_accounts/");
-            httpWebRequest.ContentType = "application/json";
-            httpWebRequest.Method = "POST";
-            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            try
             {
-                var result = streamReader.ReadToEnd();
-                MessageBox.Show(result);
-                /*
-                var data = "";
-                JObject obj = JObject.Parse(result);
-                string str1 = (Convert.ToString(obj["cash_acc_balance_list"]));
-                int counter = 0;
-                foreach (var ch in str1)
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/my_cash_accounts/");
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
-                    if (ch == 's' || ch == 'n')
-                        counter++;
-                }
-                for (int i = 0; i < counter; i++)
-                {
-                    data = Convert.ToString(obj["AccYearsList"][i]);
-                    data = Regex.Match(data, @"\d+").Value;
-                    int_data = Int32.Parse(data);
-                    d = origin.AddSeconds(int_data);
+                    var result = streamReader.ReadToEnd();
+                    MessageBox.Show(result);
+                    /*
+                    var data = "";
+                    JObject obj = JObject.Parse(result);
+                    string str1 = (Convert.ToString(obj["cash_acc_balance_list"]));
+                    int counter = 0;
+                    foreach (var ch in str1)
+                    {
+                        if (ch == 's' || ch == 'n')
+                            counter++;
+                    }
+                    for (int i = 0; i < counter; i++)
+                    {
+                        data = Convert.ToString(obj["AccYearsList"][i]);
+                        data = Regex.Match(data, @"\d+").Value;
+                        int_data = Int32.Parse(data);
+                        d = origin.AddSeconds(int_data);
 
-                    data = Convert.ToString(obj["AccYearsList"][++i]);
-                    data = Regex.Match(data, @"\d+").Value;
-                    int_data = Int32.Parse(data);
-                    d1 = origin.AddSeconds(int_data);
+                        data = Convert.ToString(obj["AccYearsList"][++i]);
+                        data = Regex.Match(data, @"\d+").Value;
+                        int_data = Int32.Parse(data);
+                        d1 = origin.AddSeconds(int_data);
 
-                    dt.Rows.Add(Convert.ToString(d).Substring(0, 9), Convert.ToString(d1).Substring(0, 9));
-                    dataGridView1.DataSource = dt;
+                        dt.Rows.Add(Convert.ToString(d).Substring(0, 9), Convert.ToString(d1).Substring(0, 9));
+                        dataGridView1.DataSource = dt;
+                    }
+                    */
                 }
-                */
+            }
+            catch
+            {
+                MessageBox.Show("Oops! Something went wrong.");
             }
 
-            //code for my bank account data
-            var httpWebRequest1 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/my_bank_accounts/");
-            httpWebRequest1.ContentType = "application/json";
-            httpWebRequest1.Method = "POST";
-            var httpResponse1 = (HttpWebResponse)httpWebRequest1.GetResponse();
-            using (var streamReader1 = new StreamReader(httpResponse1.GetResponseStream()))
+            try
             {
-                var result1 = streamReader1.ReadToEnd();
-                MessageBox.Show(result1);
+                //code for my bank account data
+                var httpWebRequest1 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/my_bank_accounts/");
+                httpWebRequest1.ContentType = "application/json";
+                httpWebRequest1.Method = "POST";
+                var httpResponse1 = (HttpWebResponse)httpWebRequest1.GetResponse();
+                using (var streamReader1 = new StreamReader(httpResponse1.GetResponseStream()))
+                {
+                    var result1 = streamReader1.ReadToEnd();
+                    MessageBox.Show(result1);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Oops! Something went wrong.");
             }
         }
 

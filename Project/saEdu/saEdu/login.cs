@@ -14,6 +14,7 @@ using System.Configuration;
 using System.Collections;
 using System.Web;
 using System.Text.RegularExpressions;
+//using System.Web.Http;
 
 namespace saEdu
 {
@@ -32,9 +33,23 @@ namespace saEdu
         {
             try
             {
+                CookieContainer httpWeb = new CookieContainer();
+
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/user_login/");
                 httpWebRequest.ContentType = "text/json";
                 httpWebRequest.Method = "POST";
+                httpWebRequest.CookieContainer = new CookieContainer();
+                httpWebRequest.CookieContainer.Add(new Uri(GlobalClass.url+"/user_login/"),new Cookie("sessionid",""));
+            
+                //.Set(HttpRequestHeader.Cookie.Equals =
+                //httpWebRequest = "{\"COOKIES\":\"{\"sessionid\":\"}";
+                //httpWebRequest.CookieContainer.Add(new Cookie("COOKIES", "hello"));
+
+                //Uri target = new Uri("http://192.168.1.107:8080/user_login/");
+
+                //httpWeb.Add(new Cookie("HTTP_COOKIE", "{\"sessionid\"=") { Domain = target.Host });
+
+
                 using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
                     string user = log_user.Text;
@@ -45,16 +60,22 @@ namespace saEdu
                     streamWriter.Flush();
                     streamWriter.Close();
                 }
-
                 var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
                     var result = streamReader.ReadToEnd();
+                    //MessageBox.Show(result);
+                    var sesion = httpResponse.Headers.Get("Set-Cookie");
+                    //MessageBox.Show(sesion);
+
+                    GlobalClass.session= sesion.Substring(sesion.IndexOf('=')+1, sesion.IndexOf(';')-sesion.IndexOf('=')-1);
+                    //MessageBox.Show(GlobalClass.session);
                     JToken response = JToken.Parse(result);
                     JToken jt= response["status"];
+                    //JToken session = response["session"];
+                    //MessageBox.Show(Convert.ToString(session));
                     if (Convert.ToString(jt).Contains("False"))
                     {
-
                         MessageBox.Show("Invalid Login! Please try again.", "Login Error!", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                         log_user.Clear();
                         log_pass.Clear();
@@ -63,17 +84,17 @@ namespace saEdu
                     }
                     else
                     {
+                        //login l = new login();
                         dashboard f3 = new dashboard();
                         f3.Show();
                         this.Hide();
                     }
                 }
-                
+
             }
             catch
             {
-                MessageBox.Show("Unable to connect to Server");
-                                   
+                MessageBox.Show("Unable to connect to Server");         
             }
             
         }
