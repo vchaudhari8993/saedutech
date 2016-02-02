@@ -55,8 +55,6 @@
             this.country = new System.Windows.Forms.TextBox();
             this.pin = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -83,9 +81,9 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.button1.Location = new System.Drawing.Point(17, 538);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(530, 41);
@@ -333,24 +331,6 @@
             this.label11.TabIndex = 14;
             this.label11.Text = "₹";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(230, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 16;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(24, 2);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(104, 26);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "UserName";
-            this.label12.Click += new System.EventHandler(this.label1_Click);
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.RoyalBlue;
@@ -383,7 +363,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(559, 632);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.grpName);
             this.Controls.Add(this.button3);
@@ -412,7 +391,6 @@
             this.Controls.Add(this.newAccName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.RoyalBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -454,8 +432,6 @@
         private System.Windows.Forms.TextBox country;
         private System.Windows.Forms.TextBox pin;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
     }

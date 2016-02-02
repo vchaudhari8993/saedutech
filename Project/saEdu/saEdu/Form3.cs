@@ -86,50 +86,59 @@ namespace saEdu
             catch
             { }
             */
-
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/register_new_user/");
-            httpWebRequest.ContentType = "application/json";
-            httpWebRequest.Method = "POST";
-            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+            try
             {
-                string json = "{\"userName\":\"" + new_username.Text + "\"," +
-                               "\"password\":\"" + new_pass.Text + "\"," +
-                               "\"confirmPassword\":\"" + new_conformpass.Text + "\"," +
-                               "\"firstName\":\"" + new_firstname.Text + "\"," +
-                               "\"lastName\":\"" + new_lastname.Text + "\"," +
-                               "\"addressLine1\":\"" + new_add1.Text + "\"," +
-                               "\"addressLine2\":\"" + new_add2.Text + "\"," +
-                               "\"city\":\"" + new_city.Text + "\"," +
-                               "\"state\":\"" + new_state.Text + "\"," +
-                               "\"pincode\":\"" + new_pin.Text + "\"," +
-                               "\"country\":\"" + new_country.Text + "\"," +
-                               "\"mobileNo0\":\"" + new_mob_no.Text + "\"," +
-                               "\"mobileNo1\":\"" + new_conformmob_no.Text + "\"," +
-                               "\"email\":\"" + new_email.Text + "\"}";
-                JObject userInfo = JObject.Parse(json);
-                //string newUserstr = JsonConvert.SerializeObject(nv);
-                //JObject newUser = JObject.Parse(newUserstr);
-                //MessageBox.Show(Convert.ToString(newUser.GetType()));
-                streamWriter.Write(userInfo);
-                streamWriter.Flush();
-                streamWriter.Close();
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/register_new_user/");
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
+                /*httpWebRequest.CookieContainer = new CookieContainer();
+                httpWebRequest.CookieContainer.Add(new Uri(GlobalClass.url + "/register_new_user/"), new Cookie("sessionid", GlobalClass.session));
+                */
+                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                {
+                    string json =  "{\"userName\":\"" + new_username.Text + "\"," +//"{\"userInfo\":["+
+                                   "\"password\":\"" + new_pass.Text + "\"," +
+                                   "\"confirmPassword\":\"" + new_conformpass.Text + "\"," +
+                                   "\"firstName\":\"" + new_firstname.Text + "\"," +
+                                   "\"lastName\":\"" + new_lastname.Text + "\"," +
+                                   "\"addressLine1\":\"" + new_add1.Text + "\"," +
+                                   "\"addressLine2\":\"" + new_add2.Text + "\"," +
+                                   "\"city\":\"" + new_city.Text + "\"," +
+                                   "\"state\":\"" + new_state.Text + "\"," +
+                                   "\"pincode\":\"" + new_pin.Text + "\"," +
+                                   "\"country\":\"" + new_country.Text + "\"," +
+                                   "\"mobileNo0\":\"" + new_mob_no.Text + "\"," +
+                                   "\"mobileNo1\":\"" + new_conformmob_no.Text + "\"," +
+                                   "\"email\":\"" + new_email.Text + "\"}";//"}]}
+                    JObject userInfo = JObject.Parse(json);
+                    //string newUserstr = JsonConvert.SerializeObject(nv);
+                    //JObject newUser = JObject.Parse(newUserstr);
+                    //MessageBox.Show(Convert.ToString(newUser.GetType()));
+                    streamWriter.Write(userInfo);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                }
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    if (result.Substring(11, 4) == "true")
+                    {
+                        MessageBox.Show("User Registered successfully. Your User name is"+" " + new_username.Text + ".", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show(result.Substring(33), "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        CleanForm();
+                        new_username.Focus();
+                    }
+                }
             }
-            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            catch
             {
-                var result = streamReader.ReadToEnd();
-                if (result.Substring(11, 4) == "true")
-                {
-                    MessageBox.Show("User Registered successfully. Your User name is" + new_username.Text + ".", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                else
-                {
-                    MessageBox.Show(result.Substring(33), "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                    CleanForm();
-                    new_username.Focus();
-                }
-            }
+                MessageBox.Show("No responce from server");
+            } 
         }
         private void CleanForm()
         {
@@ -145,6 +154,13 @@ namespace saEdu
         private void progressBar1_Validating(object sender, CancelEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            login l = new login();
+            l.Show();
+            this.Hide();
         }
     }
 }

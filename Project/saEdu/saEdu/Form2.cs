@@ -71,6 +71,7 @@ namespace saEdu
 
         private void user_acc_detail_Load(object sender, EventArgs e)
         {
+            //duration.Text = (GlobalClass.start_date + GlobalClass.end_date);
             /*
             long int_data;
             DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
@@ -80,14 +81,28 @@ namespace saEdu
             //code for getting my cash account
             try
             {
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/my_cash_accounts/");
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/my_cash_account_balance/");
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "POST";
+                httpWebRequest.CookieContainer = new CookieContainer();
+                httpWebRequest.CookieContainer.Add(new Uri(GlobalClass.url + "/my_cash_account_balance/"), new Cookie("sessionid", GlobalClass.session));
+                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                {
+                    string json = "{\"start_date\":" + GlobalClass.start_date + "," +
+                                   "\"end_date\":" + GlobalClass.end_date + "}";
+                    streamWriter.Write(json);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                }
                 var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
                     var result = streamReader.ReadToEnd();
-                    MessageBox.Show(result);
+                    //MessageBox.Show(result);
+                    JToken response = JToken.Parse(result);
+                    JToken jt = response["cash_balance"];
+                    cash_bal.Text = Convert.ToString(jt);
+
                     /*
                     var data = "";
                     JObject obj = JObject.Parse(result);
@@ -124,14 +139,90 @@ namespace saEdu
             try
             {
                 //code for my bank account data
-                var httpWebRequest1 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/my_bank_accounts/");
+                var httpWebRequest1 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/my_bank_account_balance/");
                 httpWebRequest1.ContentType = "application/json";
                 httpWebRequest1.Method = "POST";
+                httpWebRequest1.CookieContainer = new CookieContainer();
+                httpWebRequest1.CookieContainer.Add(new Uri(GlobalClass.url + "/my_bank_account_balance/"), new Cookie("sessionid", GlobalClass.session));
+                using (var streamWriter = new StreamWriter(httpWebRequest1.GetRequestStream()))
+                {
+                    string json = "{\"start_date\":" + GlobalClass.start_date + "," +
+                                   "\"end_date\":" + GlobalClass.end_date + "}";
+                    streamWriter.Write(json);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                }
                 var httpResponse1 = (HttpWebResponse)httpWebRequest1.GetResponse();
                 using (var streamReader1 = new StreamReader(httpResponse1.GetResponseStream()))
                 {
                     var result1 = streamReader1.ReadToEnd();
-                    MessageBox.Show(result1);
+                    //MessageBox.Show(result1);
+                    JToken response = JToken.Parse(result1);
+                    JToken jt = response["bank_balance"];
+                    bank_bal.Text = Convert.ToString(jt);
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Oops! Something went wrong.");
+            }
+            
+            try
+            {
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/show_account_names/");
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
+                httpWebRequest.CookieContainer = new CookieContainer();
+                httpWebRequest.CookieContainer.Add(new Uri(GlobalClass.url + "/show_account_names/"), new Cookie("sessionid", GlobalClass.session));
+                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                {
+                    string json = "{\"start_date\":" + GlobalClass.start_date + "," +
+                                   "\"end_date\":" + GlobalClass.end_date + "}";
+                    //MessageBox.Show(json);
+                    streamWriter.Write(json);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                }
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    MessageBox.Show(result);
+
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Oops! Something went wrong.");
+            }
+            
+        }
+            
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                var httpWebRequest2 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/show_all_debit_transactions/");
+                httpWebRequest2.ContentType = "application/json";
+                httpWebRequest2.Method = "POST";
+                httpWebRequest2.CookieContainer = new CookieContainer();
+                httpWebRequest2.CookieContainer.Add(new Uri(GlobalClass.url + "/show_all_debit_transactions/"), new Cookie("sessionid", GlobalClass.session));
+                //var httpResponse1 = (HttpWebResponse)httpWebRequest2.GetResponse();
+                using (var streamWriter = new StreamWriter(httpWebRequest2.GetRequestStream()))
+                {
+                    string json = "{\"start_date\":" + GlobalClass.start_date + "," +
+                                   "\"end_date\":" + GlobalClass.end_date + "}";
+                    streamWriter.Write(json);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                }
+                var httpResponse2 = (HttpWebResponse)httpWebRequest2.GetResponse();
+                using (var streamReader2 = new StreamReader(httpResponse2.GetResponseStream()))
+                {
+                    var result2 = streamReader2.ReadToEnd();
+                    MessageBox.Show(result2);
                 }
             }
             catch
@@ -140,28 +231,24 @@ namespace saEdu
             }
         }
 
-        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            var httpWebRequest2 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/show_all_debtors/");
-            httpWebRequest2.ContentType = "application/json";
-            httpWebRequest2.Method = "POST";
-            var httpResponse2 = (HttpWebResponse)httpWebRequest2.GetResponse();
-            using (var streamReader2 = new StreamReader(httpResponse2.GetResponseStream()))
-            {
-                var result2 = streamReader2.ReadToEnd();
-                MessageBox.Show(result2);
-            }
-        }
-
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             try
             {
-                var httpWebRequest3 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/show_all_creditors/");
+                var httpWebRequest3 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/show_all_credit_transactions/");
                 httpWebRequest3.ContentType = "application/json";
                 httpWebRequest3.Method = "POST";
+                httpWebRequest3.CookieContainer = new CookieContainer();
+                httpWebRequest3.CookieContainer.Add(new Uri(GlobalClass.url + "/show_all_credit_transactions/"), new Cookie("sessionid", GlobalClass.session));
+                using (var streamWriter = new StreamWriter(httpWebRequest3.GetRequestStream()))
+                {
+                    string json = "{\"start_date\":" + GlobalClass.start_date + "," +
+                                      "\"end_date\":" + GlobalClass.end_date + "}";
+                    streamWriter.Write(json);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                }
                 var httpResponse3 = (HttpWebResponse)httpWebRequest3.GetResponse();
-
                 try
                 {
                     using (var streamReader3 = new StreamReader(httpResponse3.GetResponseStream()))
@@ -177,7 +264,7 @@ namespace saEdu
             }
             catch
             {
-                MessageBox.Show("Unable to connect server");
+                MessageBox.Show("Oops! Something went wrong.");
             }
         }
         private void roundButton2_Click(object sender, EventArgs e)

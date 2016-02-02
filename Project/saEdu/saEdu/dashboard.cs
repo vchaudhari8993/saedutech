@@ -51,5 +51,19 @@ namespace saEdu
         {
             Application.Exit();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            user_acc obj = new user_acc();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            admin_panel obj = new admin_panel();
+            obj.Show();
+            this.Hide();
+        }
     }
 }

@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.roundButton4 = new RoundButton();
             this.acc_detail_opt = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.duration = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.roundButton3 = new RoundButton();
             this.roundButton2 = new RoundButton();
@@ -53,10 +53,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.bank_bal = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cash_bal = new System.Windows.Forms.TextBox();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -74,7 +74,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.roundButton4);
             this.panel1.Controls.Add(this.acc_detail_opt);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.duration);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.roundButton3);
             this.panel1.Controls.Add(this.roundButton2);
@@ -110,17 +110,17 @@
             this.acc_detail_opt.TabIndex = 5;
             this.acc_detail_opt.Visible = false;
             // 
-            // label2
+            // duration
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label2.Location = new System.Drawing.Point(10, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 23);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "year duration";
+            this.duration.AutoSize = true;
+            this.duration.BackColor = System.Drawing.Color.White;
+            this.duration.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.duration.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.duration.Location = new System.Drawing.Point(10, 26);
+            this.duration.Name = "duration";
+            this.duration.Size = new System.Drawing.Size(116, 23);
+            this.duration.TabIndex = 4;
+            this.duration.Text = "year duration";
             // 
             // label1
             // 
@@ -180,7 +180,7 @@
             this.button1.BackColor = System.Drawing.Color.RoyalBlue;
             this.button1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(1, 485);
+            this.button1.Location = new System.Drawing.Point(1, 503);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(500, 41);
             this.button1.TabIndex = 0;
@@ -264,10 +264,10 @@
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.textBox4);
-            this.panel4.Controls.Add(this.textBox2);
+            this.panel4.Controls.Add(this.bank_bal);
             this.panel4.Controls.Add(this.textBox3);
             this.panel4.Controls.Add(this.linkLabel4);
-            this.panel4.Controls.Add(this.textBox1);
+            this.panel4.Controls.Add(this.cash_bal);
             this.panel4.Controls.Add(this.linkLabel3);
             this.panel4.Controls.Add(this.linkLabel2);
             this.panel4.Controls.Add(this.linkLabel1);
@@ -344,13 +344,14 @@
             this.textBox4.Size = new System.Drawing.Size(108, 31);
             this.textBox4.TabIndex = 1;
             // 
-            // textBox2
+            // bank_bal
             // 
-            this.textBox2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(147, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(96, 31);
-            this.textBox2.TabIndex = 1;
+            this.bank_bal.Enabled = false;
+            this.bank_bal.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bank_bal.Location = new System.Drawing.Point(147, 59);
+            this.bank_bal.Name = "bank_bal";
+            this.bank_bal.Size = new System.Drawing.Size(96, 31);
+            this.bank_bal.TabIndex = 1;
             // 
             // textBox3
             // 
@@ -372,13 +373,14 @@
             this.linkLabel4.Text = "Debitors";
             this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
             // 
-            // textBox1
+            // cash_bal
             // 
-            this.textBox1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(147, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(96, 31);
-            this.textBox1.TabIndex = 1;
+            this.cash_bal.Enabled = false;
+            this.cash_bal.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cash_bal.Location = new System.Drawing.Point(147, 14);
+            this.cash_bal.Name = "cash_bal";
+            this.cash_bal.Size = new System.Drawing.Size(96, 31);
+            this.cash_bal.TabIndex = 1;
             // 
             // linkLabel3
             // 
@@ -416,25 +418,27 @@
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.White;
             this.button4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.RoyalBlue;
             this.button4.Location = new System.Drawing.Point(260, 456);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(220, 30);
+            this.button4.Size = new System.Drawing.Size(220, 41);
             this.button4.TabIndex = 17;
             this.button4.Text = "Next";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.White;
             this.button3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.RoyalBlue;
             this.button3.Location = new System.Drawing.Point(18, 456);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(227, 30);
+            this.button3.Size = new System.Drawing.Size(227, 41);
             this.button3.TabIndex = 16;
             this.button3.Text = "Back";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // user_acc_detail
@@ -443,7 +447,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(503, 528);
+            this.ClientSize = new System.Drawing.Size(503, 551);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
@@ -475,7 +479,7 @@
         private RoundButton roundButton2;
         private RoundButton roundButton1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label duration;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel5;
@@ -490,10 +494,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox bank_bal;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox cash_bal;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel1;

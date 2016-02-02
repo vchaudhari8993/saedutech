@@ -20,8 +20,11 @@ using System.Web.Script.Serialization;
 using System.Text.RegularExpressions;
 namespace saEdu
 {
+
     public partial class user_acc : Form
     {
+        long int_data;
+        //DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
         public class User
         {
             public bool start_date { get; set; }
@@ -61,8 +64,6 @@ namespace saEdu
 
         private void user_view_Load(object sender, EventArgs e)
         {
-            long int_data;
-            DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
             DataTable dt = new DataTable();
             DateTime d,d1;
 
@@ -98,26 +99,32 @@ namespace saEdu
                         if (ch == 's')
                             counter++;
                     }
-                    
-                    for (int i = 0; i < counter; i++)
+                    if(counter>0)
                     {
+                        for (int i = 0; i < counter; i++)
+                        {
 
-                        accYr = (JToken)(obj["AccYearsList"][i]);
-                        //MessageBox.Show(Convert.ToString(accYr["start_date"]));
-                        //MessageBox.Show(Convert.ToString(accYr["end_date"]));
-                        
-                        int_data = Int32.Parse(Convert.ToString(accYr["start_date"]));
-                        d = origin.AddSeconds(int_data);
-                        int_data = Int32.Parse(Convert.ToString(accYr["end_date"]));
-                        d1 = origin.AddSeconds(int_data);
+                            accYr = (JToken)(obj["AccYearsList"][i]);
+                            //MessageBox.Show(Convert.ToString(accYr["start_date"]));
+                            //MessageBox.Show(Convert.ToString(accYr["end_date"]));
 
-                        //data = Convert.ToString(obj["AccYearsList"][++i]);
-                        //data = Regex.Match(data, @"\d+").Value;
-                        //int_data = Int32.Parse(data);
-                        //d1 = origin.AddSeconds(int_data);
+                            int_data = Int32.Parse(Convert.ToString(accYr["start_date"]));
+                            d = GlobalClass.origin.AddSeconds(int_data);
+                            int_data = Int32.Parse(Convert.ToString(accYr["end_date"]));
+                            d1 = GlobalClass.origin.AddSeconds(int_data);
 
-                        dt.Rows.Add(Convert.ToString(d).Substring(0, 9), Convert.ToString(d1).Substring(0, 9));
-                        dataGridView1.DataSource = dt;
+                            //data = Convert.ToString(obj["AccYearsList"][++i]);
+                            //data = Regex.Match(data, @"\d+").Value;
+                            //int_data = Int32.Parse(data);
+                            //d1 = origin.AddSeconds(int_data);
+
+                            dt.Rows.Add(Convert.ToString(d).Substring(0, 9), Convert.ToString(d1).Substring(0, 9));
+                            dataGridView1.DataSource = dt;
+                        }
+                    }
+                    else
+                    {
+                        //dt.Rows.Add("No Data found for your account","hello");
                     }
                 }
             }
@@ -215,14 +222,35 @@ namespace saEdu
 
         private void btn_next(object sender, EventArgs e)
         {
-            user_acc_detail ud = new user_acc_detail();
-            ud.Show();
+            cr_dr_detail u = new cr_dr_detail();
+            u.Show();
             this.Hide();
         }
 
         private void roundButton2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //var dataIndexNo = dataGridView1.Rows[e.RowIndex].Index.ToString();
+            string cellValue = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            string cellValue1 = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //Convert.ToDateTime(cellValue);
+
+            //var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            int_data= Convert.ToInt64((Convert.ToDateTime(cellValue) - GlobalClass.origin).TotalSeconds);
+            GlobalClass.start_date = int_data;
+            int_data = Convert.ToInt64((Convert.ToDateTime(cellValue1) - GlobalClass.origin).TotalSeconds);
+            GlobalClass.end_date = int_data;
+            user_acc_detail uad = new user_acc_detail();
+            uad.Show();
+            this.Hide();
+            //MessageBox.Show(Convert.ToString(GlobalClass.start_date) + " " + Convert.ToString(GlobalClass.end_date));
+            //MessageBox.Show(Convert.ToString(int_data));
+            //MessageBox.Show("the row data is: "+ cellValue+" "+cellValue1);
+            //"The row index = " + dataIndexNo.ToString() + " and 
         }
     }
 }

@@ -71,10 +71,10 @@ namespace saEdu
                     GlobalClass.session= sesion.Substring(sesion.IndexOf('=')+1, sesion.IndexOf(';')-sesion.IndexOf('=')-1);
                     //MessageBox.Show(GlobalClass.session);
                     JToken response = JToken.Parse(result);
-                    JToken jt= response["status"];
+                    //JToken jt= response["status"];
                     //JToken session = response["session"];
-                    //MessageBox.Show(Convert.ToString(session));
-                    if (Convert.ToString(jt).Contains("False"))
+                    //MessageBox.Show(Convert.ToString(jt));
+                    if (Convert.ToString(response["status"]).Contains("False"))
                     {
                         MessageBox.Show("Invalid Login! Please try again.", "Login Error!", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                         log_user.Clear();
@@ -122,6 +122,33 @@ namespace saEdu
         private void log_user_Enter(object sender, EventArgs e)
         {
             log_user.Clear();
+        }
+
+        private void register_Click(object sender, EventArgs e)
+        {
+            /*
+            try
+            {
+                CookieContainer httpWeb = new CookieContainer();
+
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/user_login/");
+                httpWebRequest.ContentType = "text/json";
+                httpWebRequest.Method = "POST";
+                httpWebRequest.CookieContainer = new CookieContainer();
+                httpWebRequest.CookieContainer.Add(new Uri(GlobalClass.url + "/user_login/"), new Cookie("sessionid", ""));
+                Form3 f3 = new Form3();
+                f3.Show();
+                this.Hide();
+
+            }
+            catch
+            {
+                MessageBox.Show("Unable to connect");
+            }
+            */
+            Form3 f3 = new Form3();
+            f3.Show();
+            this.Hide();
         }
     }
 }

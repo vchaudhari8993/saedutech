@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +12,11 @@ using System.Collections.Specialized;
 using System.Configuration;
 using System.Collections;
 using System.Web;
+using ExtensionMethods;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Web.Script.Serialization;
+using System.Text.RegularExpressions;
 //using System.Web.Script.Serialization.JavaScriptSerializer;
 
 
@@ -18,6 +24,9 @@ namespace saEdu
 {
     public partial class create_user : Form
     {
+        long int_data;
+        DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+        int group_index,acc_index;
         WebClient client = new WebClient();
         public create_user()
         {
@@ -159,6 +168,8 @@ namespace saEdu
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             acc_grp.Text = Convert.ToString(listBox1.SelectedItem);
+            group_index = listBox1.SelectedIndex;
+            //MessageBox.Show(Convert.ToString(group_index));
             //acc_grp.Text = sender.ToString();
             //reg_name.Text = sender.ToString();
         }
@@ -259,6 +270,7 @@ namespace saEdu
 
         protected void button1_Click(object sender, EventArgs e)
         {
+            /*
             NameValueCollection regInfo = new NameValueCollection();
             regInfo.Add("username", reg_name.Text);
             regInfo.Add("contact_no", reg_contact.Text);
@@ -270,9 +282,87 @@ namespace saEdu
             regInfo.Add("password", password.Text);
             string insertuser = Convert.ToString(client.UploadValues("http://192.168.1.123:8000/register_user_and_account/", "POST", regInfo));
             client.Headers.Add("application/json", "application/json");
+            */
+        }
 
-            
-            
+        private void add_acc_Click(object sender, EventArgs e)
+        {
+            int_data = Convert.ToInt64((Convert.ToDateTime(reg_date_from.Text) - GlobalClass.origin).TotalSeconds);
+            GlobalClass.start_date = int_data;
+            int_data = Convert.ToInt64((Convert.ToDateTime(reg_acc_validity.Text) - GlobalClass.origin).TotalSeconds);
+            GlobalClass.end_date = int_data;
+            //MessageBox.Show(Convert.ToString(GlobalClass.start_date) + Convert.ToString(GlobalClass.end_date));
+            try
+            {
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/create_new_user_account/");
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
+                httpWebRequest.CookieContainer = new CookieContainer();
+                httpWebRequest.CookieContainer.Add(new Uri(GlobalClass.url + "/create_new_user_account/"), new Cookie("sessionid", GlobalClass.session));
+                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                {
+                    string jsondata = "{\"account_name\":\"" + reg_name.Text + "\"," +
+                                   "\"alias\":\"" + alias.Text + "\"," +
+                                   "\"group\":" + group_index + "," +
+                                   "\"firstName\":\"" + firstName.Text + "\"," +
+                                   "\"lastName\":\"" + lastName.Text + "\"," +
+                                   "\"addressLine1\":\"" + addLine1.Text + "\"," +
+                                   "\"addressLine2\":\"" + addLine2.Text + "\"," +
+                                   "\"city\":\"" + city.Text + "\"," +
+                                   "\"state\":\"" + state.Text + "\"," +
+                                   "\"country\":\"" + country.Text + "\"," +
+                                   "\"pincode\":" + pin.Text + "," +
+                                   "\"email\":\"" + reg_email.Text + "\"," +
+                                   "\"mobileNo0\":" + reg_contact.Text + "," +
+                                   "\"mobileNo1\":" + alt_cont.Text + "," +
+                                   "\"openingBalance\":" + openingBal.Text + "," +
+                                   "\"accounttype\":" + acc_index + "," +
+                                   "\"start_date\":" + GlobalClass.start_date + "," +
+                                   "\"end_date\":" + GlobalClass.end_date + "," +
+                                   "\"duration\":" + reg_acc_period.Text + "}";
+                    MessageBox.Show(jsondata);
+                    JObject newUser = JObject.Parse(jsondata);
+
+                    streamWriter.Write(newUser);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                    MessageBox.Show(Convert.ToString(newUser));
+                }
+                try
+                {
+                    var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        MessageBox.Show(result);
+                        JToken jt = JToken.Parse(result);
+                        MessageBox.Show(Convert.ToString(jt["validation"]));
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Sorry Could not add account");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("error");
+            }
+        }
+
+        private void reg_acc_validity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reg_acc_period_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reg_acc_type_SelectedItemChanged(object sender, EventArgs e)
+        {
+            acc_index= reg_acc_type.SelectedIndex;
         }
     }
 }

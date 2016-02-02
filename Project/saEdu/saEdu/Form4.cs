@@ -36,6 +36,8 @@ namespace saEdu
             var httpWebRequest1 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/get_groups_from_db/");
             httpWebRequest1.ContentType = "application/json";
             httpWebRequest1.Method = "POST";
+            httpWebRequest1.CookieContainer = new CookieContainer();
+            httpWebRequest1.CookieContainer.Add(new Uri(GlobalClass.url + "/get_groups_from_db/"), new Cookie("sessionid", GlobalClass.session));
             try
             {
                 var httpResponse1 = (HttpWebResponse)httpWebRequest1.GetResponse();
@@ -73,10 +75,11 @@ namespace saEdu
             var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/create_new_user_account/");
             httpWebRequest.ContentType = "application/json";
             httpWebRequest.Method = "POST";
+            httpWebRequest.CookieContainer = new CookieContainer();
+            httpWebRequest.CookieContainer.Add(new Uri(GlobalClass.url + "/create_new_user_account/"), new Cookie("sessionid", GlobalClass.session));
             using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
             {
-                string jsondata = "{\"username\":\"" + textBox1.Text + "\"," +
-                                "\"account_name\":\"" + newAccName.Text + "\"," +
+                string jsondata = "{\"account_name\":\"" + newAccName.Text + "\"," +
                                "\"alias\":\"" + aliasAcc.Text + "\"," +
                                "\"group\":\"" + grpName.Text + "\"," +
                                "\"firstName\":\"" + firstName.Text + "\"," +
@@ -104,11 +107,12 @@ namespace saEdu
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
                     var result = streamReader.ReadToEnd();
+                    MessageBox.Show(result);
                 }
             }
             catch
             {
-                MessageBox.Show("error");
+                MessageBox.Show("Sorry Could not add account");
             }
         }
 

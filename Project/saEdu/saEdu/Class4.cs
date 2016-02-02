@@ -13,5 +13,8 @@ namespace saEdu
         public static string database = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Educational 1\Projects\Project HMS\Project HMS\saEdu.accdb;Persist Security Info=False;";
         public static string url = "http://192.168.1.107:8080";
         public static string session;
+        public static long start_date;
+        public static long end_date;
+        public static DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
     }
 }

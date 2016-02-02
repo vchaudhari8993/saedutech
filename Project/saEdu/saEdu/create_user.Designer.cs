@@ -29,305 +29,55 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.reg_name = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.reg_date_from = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.acc_grp = new System.Windows.Forms.TextBox();
-            this.reg_acc_validity = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.reg_acc_period = new System.Windows.Forms.NumericUpDown();
-            this.reg_email = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.reg_contact = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.reg_acc_type = new System.Windows.Forms.DomainUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.grp_dropdown = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label11 = new System.Windows.Forms.Label();
-            this.password = new System.Windows.Forms.TextBox();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reg_acc_period)).BeginInit();
+            this.button4 = new System.Windows.Forms.Button();
+            this.acc_grp = new System.Windows.Forms.TextBox();
+            this.reg_email = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.reg_acc_type = new System.Windows.Forms.DomainUpDown();
+            this.reg_name = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.add_acc = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.alias = new System.Windows.Forms.TextBox();
+            this.firstName = new System.Windows.Forms.TextBox();
+            this.pin = new System.Windows.Forms.TextBox();
+            this.city = new System.Windows.Forms.TextBox();
+            this.lastName = new System.Windows.Forms.TextBox();
+            this.country = new System.Windows.Forms.TextBox();
+            this.state = new System.Windows.Forms.TextBox();
+            this.addLine2 = new System.Windows.Forms.TextBox();
+            this.addLine1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.reg_contact = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.alt_cont = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.reg_date_from = new System.Windows.Forms.TextBox();
+            this.reg_acc_validity = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.reg_acc_period = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.openingBal = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.grp_dropdown.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reg_acc_period)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 183);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Account Type*";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(18, 371);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(188, 42);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(212, 371);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(188, 42);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Add user";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 23);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Name*";
-            this.label2.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 220);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 23);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Date From*";
-            this.label3.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // reg_name
-            // 
-            this.reg_name.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.reg_name.Location = new System.Drawing.Point(176, 13);
-            this.reg_name.Name = "reg_name";
-            this.reg_name.Size = new System.Drawing.Size(206, 31);
-            this.reg_name.TabIndex = 0;
-            this.reg_name.Leave += new System.EventHandler(this.reg_name_Leave);
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.password);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.reg_date_from);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.acc_grp);
-            this.panel1.Controls.Add(this.reg_acc_validity);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.reg_acc_period);
-            this.panel1.Controls.Add(this.reg_email);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.reg_contact);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.reg_acc_type);
-            this.panel1.Controls.Add(this.reg_name);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.panel1.Location = new System.Drawing.Point(7, 56);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(418, 422);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(361, 221);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(21, 31);
-            this.dateTimePicker1.TabIndex = 5;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            this.dateTimePicker1.Leave += new System.EventHandler(this.dateTimePicker1_Leave);
-            // 
-            // reg_date_from
-            // 
-            this.reg_date_from.Enabled = false;
-            this.reg_date_from.Location = new System.Drawing.Point(176, 221);
-            this.reg_date_from.Name = "reg_date_from";
-            this.reg_date_from.Size = new System.Drawing.Size(169, 31);
-            this.reg_date_from.TabIndex = 14;
-            this.reg_date_from.TextChanged += new System.EventHandler(this.reg_date_from_TextChanged);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(361, 148);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(21, 31);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "*";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            this.button4.Leave += new System.EventHandler(this.button4_Leave);
-            // 
-            // acc_grp
-            // 
-            this.acc_grp.Enabled = false;
-            this.acc_grp.Location = new System.Drawing.Point(176, 148);
-            this.acc_grp.Name = "acc_grp";
-            this.acc_grp.Size = new System.Drawing.Size(179, 31);
-            this.acc_grp.TabIndex = 12;
-            // 
-            // reg_acc_validity
-            // 
-            this.reg_acc_validity.Enabled = false;
-            this.reg_acc_validity.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.reg_acc_validity.Location = new System.Drawing.Point(176, 297);
-            this.reg_acc_validity.Name = "reg_acc_validity";
-            this.reg_acc_validity.Size = new System.Drawing.Size(224, 31);
-            this.reg_acc_validity.TabIndex = 7;
-            this.reg_acc_validity.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 297);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 23);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Valid Until";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(314, 260);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 23);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Years";
-            // 
-            // reg_acc_period
-            // 
-            this.reg_acc_period.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.reg_acc_period.Location = new System.Drawing.Point(250, 260);
-            this.reg_acc_period.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.reg_acc_period.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.reg_acc_period.Name = "reg_acc_period";
-            this.reg_acc_period.Size = new System.Drawing.Size(47, 31);
-            this.reg_acc_period.TabIndex = 6;
-            this.reg_acc_period.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.reg_acc_period.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            this.reg_acc_period.Enter += new System.EventHandler(this.reg_acc_period_Enter);
-            // 
-            // reg_email
-            // 
-            this.reg_email.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.reg_email.Location = new System.Drawing.Point(176, 87);
-            this.reg_email.Name = "reg_email";
-            this.reg_email.Size = new System.Drawing.Size(206, 31);
-            this.reg_email.TabIndex = 2;
-            this.reg_email.TextChanged += new System.EventHandler(this.reg_email_TextChanged);
-            this.reg_email.Leave += new System.EventHandler(this.reg_email_Leave);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 87);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 23);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "E-mail*";
-            // 
-            // reg_contact
-            // 
-            this.reg_contact.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.reg_contact.Location = new System.Drawing.Point(176, 50);
-            this.reg_contact.Name = "reg_contact";
-            this.reg_contact.Size = new System.Drawing.Size(206, 31);
-            this.reg_contact.TabIndex = 1;
-            this.reg_contact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.reg_contact_KeyPress);
-            this.reg_contact.Leave += new System.EventHandler(this.reg_contact_Leave);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 23);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Contact No.*";
-            // 
-            // reg_acc_type
-            // 
-            this.reg_acc_type.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.reg_acc_type.Items.Add("Personal");
-            this.reg_acc_type.Items.Add("Nominal");
-            this.reg_acc_type.Items.Add("Real");
-            this.reg_acc_type.Location = new System.Drawing.Point(176, 183);
-            this.reg_acc_type.Name = "reg_acc_type";
-            this.reg_acc_type.Size = new System.Drawing.Size(206, 31);
-            this.reg_acc_type.TabIndex = 4;
-            this.reg_acc_type.Text = "Select Account Type";
-            this.reg_acc_type.SelectedItemChanged += new System.EventHandler(this.domainUpDown1_SelectedItemChanged);
-            this.reg_acc_type.Leave += new System.EventHandler(this.reg_acc_type_Leave);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 260);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(224, 23);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Account Period for account";
-            this.label6.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(17, 148);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(137, 23);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Account Group*";
-            this.label10.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -336,7 +86,7 @@
             this.panel2.ForeColor = System.Drawing.Color.RoyalBlue;
             this.panel2.Location = new System.Drawing.Point(7, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(418, 44);
+            this.panel2.Size = new System.Drawing.Size(432, 30);
             this.panel2.TabIndex = 1;
             // 
             // label9
@@ -345,21 +95,21 @@
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label9.Location = new System.Drawing.Point(130, 10);
+            this.label9.Location = new System.Drawing.Point(144, 2);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(159, 25);
+            this.label9.Size = new System.Drawing.Size(134, 25);
             this.label9.TabIndex = 0;
-            this.label9.Text = "New User Account";
+            this.label9.Text = "NEW ACCOUNT";
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.RoyalBlue;
             this.button3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(8, 484);
+            this.button3.Location = new System.Drawing.Point(7, 678);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(418, 41);
-            this.button3.TabIndex = 0;
+            this.button3.Size = new System.Drawing.Size(432, 41);
+            this.button3.TabIndex = 21;
             this.button3.Text = "EXIT";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -367,9 +117,9 @@
             // grp_dropdown
             // 
             this.grp_dropdown.Controls.Add(this.listBox1);
-            this.grp_dropdown.Location = new System.Drawing.Point(432, 56);
+            this.grp_dropdown.Location = new System.Drawing.Point(445, 42);
             this.grp_dropdown.Name = "grp_dropdown";
-            this.grp_dropdown.Size = new System.Drawing.Size(228, 436);
+            this.grp_dropdown.Size = new System.Drawing.Size(228, 670);
             this.grp_dropdown.TabIndex = 1;
             // 
             // listBox1
@@ -381,7 +131,7 @@
             "Bank Accounts",
             "Bank OCC A/c",
             "Branch/Division",
-            "Capital Acount",
+            "Capital Account",
             "Cash-in-Hand",
             "Current Assets",
             "Current liabilities",
@@ -407,7 +157,7 @@
             "Sales Accounts",
             "Secured Loans",
             "Stock in hand"});
-            this.listBox1.Location = new System.Drawing.Point(3, 3);
+            this.listBox1.Location = new System.Drawing.Point(3, 5);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(219, 403);
             this.listBox1.TabIndex = 0;
@@ -418,24 +168,400 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Tag = "Enter";
             // 
-            // label11
+            // button4
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(18, 334);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(148, 23);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Choose Password";
+            this.button4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(418, 120);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(21, 33);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "*";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Leave += new System.EventHandler(this.button4_Leave);
             // 
-            // password
+            // acc_grp
             // 
-            this.password.Location = new System.Drawing.Point(176, 334);
-            this.password.MaxLength = 20;
-            this.password.Name = "password";
-            this.password.PasswordChar = '*';
-            this.password.Size = new System.Drawing.Size(224, 31);
-            this.password.TabIndex = 16;
-            this.password.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.acc_grp.Enabled = false;
+            this.acc_grp.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acc_grp.ForeColor = System.Drawing.Color.Black;
+            this.acc_grp.Location = new System.Drawing.Point(186, 120);
+            this.acc_grp.Name = "acc_grp";
+            this.acc_grp.Size = new System.Drawing.Size(226, 33);
+            this.acc_grp.TabIndex = 2;
+            // 
+            // reg_email
+            // 
+            this.reg_email.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reg_email.ForeColor = System.Drawing.Color.Black;
+            this.reg_email.Location = new System.Drawing.Point(122, 555);
+            this.reg_email.Name = "reg_email";
+            this.reg_email.Size = new System.Drawing.Size(317, 33);
+            this.reg_email.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label5.Location = new System.Drawing.Point(19, 555);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 26);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "E-mail";
+            // 
+            // reg_acc_type
+            // 
+            this.reg_acc_type.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reg_acc_type.ForeColor = System.Drawing.Color.Black;
+            this.reg_acc_type.Items.Add("Real");
+            this.reg_acc_type.Items.Add("Personal");
+            this.reg_acc_type.Items.Add("Nominal");
+            this.reg_acc_type.Location = new System.Drawing.Point(186, 159);
+            this.reg_acc_type.Name = "reg_acc_type";
+            this.reg_acc_type.Size = new System.Drawing.Size(253, 33);
+            this.reg_acc_type.TabIndex = 3;
+            this.reg_acc_type.Text = "Select Account Type";
+            this.reg_acc_type.SelectedItemChanged += new System.EventHandler(this.reg_acc_type_SelectedItemChanged);
+            // 
+            // reg_name
+            // 
+            this.reg_name.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reg_name.ForeColor = System.Drawing.Color.Black;
+            this.reg_name.Location = new System.Drawing.Point(186, 42);
+            this.reg_name.Name = "reg_name";
+            this.reg_name.Size = new System.Drawing.Size(253, 33);
+            this.reg_name.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label2.Location = new System.Drawing.Point(22, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(140, 26);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Account Name";
+            // 
+            // add_acc
+            // 
+            this.add_acc.BackColor = System.Drawing.Color.White;
+            this.add_acc.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add_acc.Location = new System.Drawing.Point(236, 630);
+            this.add_acc.Name = "add_acc";
+            this.add_acc.Size = new System.Drawing.Size(203, 42);
+            this.add_acc.TabIndex = 20;
+            this.add_acc.Text = "Add Account";
+            this.add_acc.UseVisualStyleBackColor = false;
+            this.add_acc.Click += new System.EventHandler(this.add_acc_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(7, 630);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(206, 42);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label10.Location = new System.Drawing.Point(22, 120);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(151, 26);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "Account Group*";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label1.Location = new System.Drawing.Point(22, 159);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 26);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Account Type*";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label12.Location = new System.Drawing.Point(22, 81);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(53, 26);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Alias";
+            // 
+            // alias
+            // 
+            this.alias.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alias.ForeColor = System.Drawing.Color.Black;
+            this.alias.Location = new System.Drawing.Point(186, 81);
+            this.alias.Name = "alias";
+            this.alias.Size = new System.Drawing.Size(253, 33);
+            this.alias.TabIndex = 1;
+            // 
+            // firstName
+            // 
+            this.firstName.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstName.ForeColor = System.Drawing.Color.Black;
+            this.firstName.Location = new System.Drawing.Point(127, 361);
+            this.firstName.Name = "firstName";
+            this.firstName.Size = new System.Drawing.Size(153, 33);
+            this.firstName.TabIndex = 8;
+            // 
+            // pin
+            // 
+            this.pin.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pin.ForeColor = System.Drawing.Color.Black;
+            this.pin.Location = new System.Drawing.Point(122, 516);
+            this.pin.Name = "pin";
+            this.pin.Size = new System.Drawing.Size(153, 33);
+            this.pin.TabIndex = 14;
+            // 
+            // city
+            // 
+            this.city.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.city.ForeColor = System.Drawing.Color.Black;
+            this.city.Location = new System.Drawing.Point(122, 477);
+            this.city.Name = "city";
+            this.city.Size = new System.Drawing.Size(153, 33);
+            this.city.TabIndex = 12;
+            // 
+            // lastName
+            // 
+            this.lastName.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastName.ForeColor = System.Drawing.Color.Black;
+            this.lastName.Location = new System.Drawing.Point(286, 361);
+            this.lastName.Name = "lastName";
+            this.lastName.Size = new System.Drawing.Size(153, 33);
+            this.lastName.TabIndex = 9;
+            // 
+            // country
+            // 
+            this.country.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.country.ForeColor = System.Drawing.Color.Black;
+            this.country.Location = new System.Drawing.Point(286, 516);
+            this.country.Name = "country";
+            this.country.Size = new System.Drawing.Size(153, 33);
+            this.country.TabIndex = 15;
+            // 
+            // state
+            // 
+            this.state.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.state.ForeColor = System.Drawing.Color.Black;
+            this.state.Location = new System.Drawing.Point(286, 477);
+            this.state.Name = "state";
+            this.state.Size = new System.Drawing.Size(153, 33);
+            this.state.TabIndex = 13;
+            // 
+            // addLine2
+            // 
+            this.addLine2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addLine2.ForeColor = System.Drawing.Color.Black;
+            this.addLine2.Location = new System.Drawing.Point(122, 438);
+            this.addLine2.Name = "addLine2";
+            this.addLine2.Size = new System.Drawing.Size(317, 33);
+            this.addLine2.TabIndex = 11;
+            // 
+            // addLine1
+            // 
+            this.addLine1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addLine1.ForeColor = System.Drawing.Color.Black;
+            this.addLine1.Location = new System.Drawing.Point(122, 400);
+            this.addLine1.Name = "addLine1";
+            this.addLine1.Size = new System.Drawing.Size(317, 33);
+            this.addLine1.TabIndex = 10;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label13.Location = new System.Drawing.Point(19, 400);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(81, 26);
+            this.label13.TabIndex = 50;
+            this.label13.Text = "Address";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label14.Location = new System.Drawing.Point(22, 361);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(64, 26);
+            this.label14.TabIndex = 51;
+            this.label14.Text = "Name";
+            // 
+            // reg_contact
+            // 
+            this.reg_contact.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reg_contact.ForeColor = System.Drawing.Color.Black;
+            this.reg_contact.Location = new System.Drawing.Point(122, 594);
+            this.reg_contact.Name = "reg_contact";
+            this.reg_contact.Size = new System.Drawing.Size(153, 33);
+            this.reg_contact.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label4.Location = new System.Drawing.Point(2, 596);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(114, 26);
+            this.label4.TabIndex = 61;
+            this.label4.Text = "Contact No.";
+            // 
+            // alt_cont
+            // 
+            this.alt_cont.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alt_cont.ForeColor = System.Drawing.Color.Black;
+            this.alt_cont.Location = new System.Drawing.Point(286, 593);
+            this.alt_cont.Name = "alt_cont";
+            this.alt_cont.Size = new System.Drawing.Size(153, 33);
+            this.alt_cont.TabIndex = 18;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(418, 237);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(21, 33);
+            this.dateTimePicker1.TabIndex = 5;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // reg_date_from
+            // 
+            this.reg_date_from.Enabled = false;
+            this.reg_date_from.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reg_date_from.ForeColor = System.Drawing.Color.Black;
+            this.reg_date_from.Location = new System.Drawing.Point(186, 237);
+            this.reg_date_from.Name = "reg_date_from";
+            this.reg_date_from.Size = new System.Drawing.Size(226, 33);
+            this.reg_date_from.TabIndex = 69;
+            this.reg_date_from.TextChanged += new System.EventHandler(this.reg_date_from_TextChanged);
+            // 
+            // reg_acc_validity
+            // 
+            this.reg_acc_validity.Enabled = false;
+            this.reg_acc_validity.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reg_acc_validity.ForeColor = System.Drawing.Color.Black;
+            this.reg_acc_validity.Location = new System.Drawing.Point(186, 313);
+            this.reg_acc_validity.Name = "reg_acc_validity";
+            this.reg_acc_validity.Size = new System.Drawing.Size(253, 33);
+            this.reg_acc_validity.TabIndex = 7;
+            this.reg_acc_validity.TextChanged += new System.EventHandler(this.reg_acc_validity_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label8.Location = new System.Drawing.Point(22, 313);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(101, 26);
+            this.label8.TabIndex = 67;
+            this.label8.Text = "Valid Until";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label7.Location = new System.Drawing.Point(382, 276);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 26);
+            this.label7.TabIndex = 68;
+            this.label7.Text = "Years";
+            // 
+            // reg_acc_period
+            // 
+            this.reg_acc_period.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reg_acc_period.ForeColor = System.Drawing.Color.Black;
+            this.reg_acc_period.Location = new System.Drawing.Point(324, 276);
+            this.reg_acc_period.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.reg_acc_period.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.reg_acc_period.Name = "reg_acc_period";
+            this.reg_acc_period.Size = new System.Drawing.Size(47, 33);
+            this.reg_acc_period.TabIndex = 6;
+            this.reg_acc_period.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.reg_acc_period.ValueChanged += new System.EventHandler(this.reg_acc_period_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label3.Location = new System.Drawing.Point(22, 237);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 26);
+            this.label3.TabIndex = 62;
+            this.label3.Text = "Date From*";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label6.Location = new System.Drawing.Point(22, 276);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(247, 26);
+            this.label6.TabIndex = 63;
+            this.label6.Text = "Account Period for account";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label16.Location = new System.Drawing.Point(181, 201);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(23, 26);
+            this.label16.TabIndex = 72;
+            this.label16.Text = "₹";
+            // 
+            // openingBal
+            // 
+            this.openingBal.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openingBal.ForeColor = System.Drawing.Color.Black;
+            this.openingBal.Location = new System.Drawing.Point(215, 198);
+            this.openingBal.Name = "openingBal";
+            this.openingBal.Size = new System.Drawing.Size(224, 33);
+            this.openingBal.TabIndex = 4;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label17.Location = new System.Drawing.Point(22, 198);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(158, 26);
+            this.label17.TabIndex = 70;
+            this.label17.Text = "Opening Balance";
             // 
             // create_user
             // 
@@ -444,60 +570,107 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(666, 531);
+            this.ClientSize = new System.Drawing.Size(682, 722);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.openingBal);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.reg_date_from);
+            this.Controls.Add(this.reg_acc_validity);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.reg_acc_period);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.alt_cont);
+            this.Controls.Add(this.reg_contact);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.firstName);
+            this.Controls.Add(this.pin);
+            this.Controls.Add(this.city);
+            this.Controls.Add(this.lastName);
+            this.Controls.Add(this.country);
+            this.Controls.Add(this.state);
+            this.Controls.Add(this.addLine2);
+            this.Controls.Add(this.addLine1);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.grp_dropdown);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.alias);
+            this.Controls.Add(this.reg_name);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.acc_grp);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.add_acc);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.reg_email);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.reg_acc_type);
+            this.ForeColor = System.Drawing.Color.RoyalBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "create_user";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Registration Form";
+            this.Text = "Create a new Account";
             this.Load += new System.EventHandler(this.Form6_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reg_acc_period)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.grp_dropdown.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reg_acc_period)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox reg_name;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DomainUpDown reg_acc_type;
-        private System.Windows.Forms.TextBox reg_email;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox reg_contact;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown reg_acc_period;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox reg_acc_validity;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel grp_dropdown;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox acc_grp;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.ServiceProcess.ServiceController serviceController1;
+        private System.Windows.Forms.TextBox reg_name;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox acc_grp;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button add_acc;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox reg_email;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DomainUpDown reg_acc_type;
+        private System.Windows.Forms.TextBox alias;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox alt_cont;
+        private System.Windows.Forms.TextBox reg_contact;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox firstName;
+        private System.Windows.Forms.TextBox pin;
+        private System.Windows.Forms.TextBox city;
+        private System.Windows.Forms.TextBox lastName;
+        private System.Windows.Forms.TextBox country;
+        private System.Windows.Forms.TextBox state;
+        private System.Windows.Forms.TextBox addLine2;
+        private System.Windows.Forms.TextBox addLine1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox reg_date_from;
-        private System.Windows.Forms.TextBox password;
-        private System.Windows.Forms.Label label11;
-        private System.ServiceProcess.ServiceController serviceController1;
-
+        private System.Windows.Forms.TextBox reg_acc_validity;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown reg_acc_period;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox openingBal;
+        private System.Windows.Forms.Label label17;
     }
 }

@@ -38,6 +38,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.register = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +75,7 @@
             // 
             // login_button
             // 
+            this.login_button.BackColor = System.Drawing.Color.White;
             this.login_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.login_button.ForeColor = System.Drawing.Color.RoyalBlue;
             this.login_button.Location = new System.Drawing.Point(22, 123);
@@ -81,7 +83,7 @@
             this.login_button.Size = new System.Drawing.Size(294, 45);
             this.login_button.TabIndex = 2;
             this.login_button.Text = "LOGIN";
-            this.login_button.UseVisualStyleBackColor = true;
+            this.login_button.UseVisualStyleBackColor = false;
             this.login_button.Click += new System.EventHandler(this.button1_Click);
             // 
             // log_pass
@@ -158,13 +160,27 @@
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(12, 274);
+            this.button1.Location = new System.Drawing.Point(12, 326);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(339, 41);
             this.button1.TabIndex = 0;
             this.button1.Text = "EXIT";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // register
+            // 
+            this.register.BackColor = System.Drawing.Color.White;
+            this.register.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.register.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.register.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.register.Location = new System.Drawing.Point(12, 279);
+            this.register.Name = "register";
+            this.register.Size = new System.Drawing.Size(339, 41);
+            this.register.TabIndex = 0;
+            this.register.Text = "REGISTER NOW";
+            this.register.UseVisualStyleBackColor = false;
+            this.register.Click += new System.EventHandler(this.register_Click);
             // 
             // login
             // 
@@ -173,8 +189,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.button1;
-            this.ClientSize = new System.Drawing.Size(363, 326);
+            this.ClientSize = new System.Drawing.Size(363, 379);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.register);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -202,6 +219,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-
+        private System.Windows.Forms.Button register;
     }
 }
