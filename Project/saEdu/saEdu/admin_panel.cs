@@ -357,14 +357,12 @@ namespace saEdu
 
         private void button6_Click(object sender, EventArgs e)
         {
-            add_cr_acc.Show();
-            button6.Enabled = false;
+            
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            add_dr_acc.Show();
-            button1.Enabled = false;
+            
     }
 
         private void roundButton1_Click(object sender, EventArgs e)
