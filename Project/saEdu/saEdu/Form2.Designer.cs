@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.roundButton4 = new RoundButton();
             this.acc_detail_opt = new System.Windows.Forms.ComboBox();
@@ -52,9 +54,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.debit_amt = new System.Windows.Forms.TextBox();
             this.bank_bal = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.credit_amt = new System.Windows.Forms.TextBox();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.cash_bal = new System.Windows.Forms.TextBox();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
@@ -238,9 +240,39 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(458, 161);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -263,9 +295,9 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.textBox4);
+            this.panel4.Controls.Add(this.debit_amt);
             this.panel4.Controls.Add(this.bank_bal);
-            this.panel4.Controls.Add(this.textBox3);
+            this.panel4.Controls.Add(this.credit_amt);
             this.panel4.Controls.Add(this.linkLabel4);
             this.panel4.Controls.Add(this.cash_bal);
             this.panel4.Controls.Add(this.linkLabel3);
@@ -336,13 +368,14 @@
             this.label9.TabIndex = 7;
             this.label9.Text = "₹";
             // 
-            // textBox4
+            // debit_amt
             // 
-            this.textBox4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(370, 59);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(108, 31);
-            this.textBox4.TabIndex = 1;
+            this.debit_amt.Enabled = false;
+            this.debit_amt.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.debit_amt.Location = new System.Drawing.Point(370, 59);
+            this.debit_amt.Name = "debit_amt";
+            this.debit_amt.Size = new System.Drawing.Size(108, 31);
+            this.debit_amt.TabIndex = 1;
             // 
             // bank_bal
             // 
@@ -353,13 +386,14 @@
             this.bank_bal.Size = new System.Drawing.Size(96, 31);
             this.bank_bal.TabIndex = 1;
             // 
-            // textBox3
+            // credit_amt
             // 
-            this.textBox3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(370, 14);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(108, 31);
-            this.textBox3.TabIndex = 1;
+            this.credit_amt.Enabled = false;
+            this.credit_amt.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.credit_amt.Location = new System.Drawing.Point(370, 14);
+            this.credit_amt.Name = "credit_amt";
+            this.credit_amt.Size = new System.Drawing.Size(108, 31);
+            this.credit_amt.TabIndex = 1;
             // 
             // linkLabel4
             // 
@@ -493,9 +527,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox debit_amt;
         private System.Windows.Forms.TextBox bank_bal;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox credit_amt;
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.TextBox cash_bal;
         private System.Windows.Forms.LinkLabel linkLabel3;

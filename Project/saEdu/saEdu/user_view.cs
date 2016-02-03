@@ -23,12 +23,10 @@ namespace saEdu
 
     public partial class user_acc : Form
     {
-        long int_data;
+        //long int_data;
         //DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
         public class User
         {
-            public bool start_date { get; set; }
-            public string end_date { get; set; }
         }
         public user_acc()
         {
@@ -82,7 +80,6 @@ namespace saEdu
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
                     var result = streamReader.ReadToEnd();
-                    //MessageBox.Show(result);
                     JObject obj = JObject.Parse(result);
                     dt.Columns.Add("Start Date");
                     dt.Columns.Add("End Date");
@@ -93,10 +90,10 @@ namespace saEdu
                     string str1 = (Convert.ToString(obj["AccYearsList"]));
                     //MessageBox.Show(str1);
                     int counter = 0;
-                    JToken accYr;
+                    //JToken accYr;
                     foreach (var ch in str1)
                     {
-                        if (ch == 's')
+                        if (ch == '{')
                             counter++;
                     }
                     if(counter>0)
@@ -104,27 +101,29 @@ namespace saEdu
                         for (int i = 0; i < counter; i++)
                         {
 
-                            accYr = (JToken)(obj["AccYearsList"][i]);
+                            //accYr = (JToken)(obj["AccYearsList"][i]);
                             //MessageBox.Show(Convert.ToString(accYr["start_date"]));
                             //MessageBox.Show(Convert.ToString(accYr["end_date"]));
-
-                            int_data = Int32.Parse(Convert.ToString(accYr["start_date"]));
-                            d = GlobalClass.origin.AddSeconds(int_data);
-                            int_data = Int32.Parse(Convert.ToString(accYr["end_date"]));
-                            d1 = GlobalClass.origin.AddSeconds(int_data);
-
+                            ////////////////////////////////////////////////////////////
+                            //merged the value insted of variable if error then undo this
+                            ////////////////////////////////////////////////////////////
+                            //int_data = Int32.Parse(Convert.ToString((JToken)(obj["AccYearsList"][i])["start_date"]));
+                            d = GlobalClass.origin.AddMilliseconds(Int64.Parse(Convert.ToString((JToken)(obj["AccYearsList"][i])["start_date"])));
+                            //int_data = Int32.Parse(Convert.ToString((JToken)(obj["AccYearsList"][i])["end_date"]));
+                            d1 = GlobalClass.origin.AddMilliseconds(Int64.Parse(Convert.ToString((JToken)(obj["AccYearsList"][i])["end_date"])));
+                            
                             //data = Convert.ToString(obj["AccYearsList"][++i]);
                             //data = Regex.Match(data, @"\d+").Value;
                             //int_data = Int32.Parse(data);
                             //d1 = origin.AddSeconds(int_data);
 
-                            dt.Rows.Add(Convert.ToString(d).Substring(0, 9), Convert.ToString(d1).Substring(0, 9));
+                            dt.Rows.Add(d.ToShortDateString(), d1.ToShortDateString());
                             dataGridView1.DataSource = dt;
                         }
                     }
                     else
                     {
-                        //dt.Rows.Add("No Data found for your account","hello");
+                        MessageBox.Show("No Data found for your account");
                     }
                 }
             }
@@ -235,15 +234,17 @@ namespace saEdu
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             //var dataIndexNo = dataGridView1.Rows[e.RowIndex].Index.ToString();
-            string cellValue = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            string cellValue1 = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //string cellValue = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //string cellValue1 = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             //Convert.ToDateTime(cellValue);
 
             //var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-            int_data= Convert.ToInt64((Convert.ToDateTime(cellValue) - GlobalClass.origin).TotalSeconds);
-            GlobalClass.start_date = int_data;
-            int_data = Convert.ToInt64((Convert.ToDateTime(cellValue1) - GlobalClass.origin).TotalSeconds);
-            GlobalClass.end_date = int_data;
+            /////////////////////////////////////////////////////
+            //edited below code if goves error undo it
+            //int_data= Convert.ToInt64((Convert.ToDateTime(cellValue) - GlobalClass.origin).TotalSeconds);
+            GlobalClass.start_date = Convert.ToInt64((Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()) - GlobalClass.origin).TotalMilliseconds);
+            //int_data = Convert.ToInt64((Convert.ToDateTime(cellValue1) - GlobalClass.origin).TotalSeconds);
+            GlobalClass.end_date = Convert.ToInt64((Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString()) - GlobalClass.origin).TotalMilliseconds);
             user_acc_detail uad = new user_acc_detail();
             uad.Show();
             this.Hide();

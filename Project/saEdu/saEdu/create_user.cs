@@ -287,9 +287,9 @@ namespace saEdu
 
         private void add_acc_Click(object sender, EventArgs e)
         {
-            int_data = Convert.ToInt64((Convert.ToDateTime(reg_date_from.Text) - GlobalClass.origin).TotalSeconds);
+            int_data = Convert.ToInt64((Convert.ToDateTime(reg_date_from.Text) - GlobalClass.origin).TotalMilliseconds);
             GlobalClass.start_date = int_data;
-            int_data = Convert.ToInt64((Convert.ToDateTime(reg_acc_validity.Text) - GlobalClass.origin).TotalSeconds);
+            int_data = Convert.ToInt64((Convert.ToDateTime(reg_acc_validity.Text) - GlobalClass.origin).TotalMilliseconds);
             GlobalClass.end_date = int_data;
             //MessageBox.Show(Convert.ToString(GlobalClass.start_date) + Convert.ToString(GlobalClass.end_date));
             try

@@ -57,22 +57,144 @@ namespace saEdu
 
         private void Form5_Load(object sender, EventArgs e)
         {
+            DateTime start_date, end_date;
 
             textBox4.Text = Convert.ToString(dateTimePicker1.Value.DayOfWeek);
             textBox1.Text = dateTimePicker1.Value.ToShortDateString();
             //TextBox1.ForeColor = System.Drawing.Color.Black; 
-            add_cr_acc.Hide();
-            add_dr_acc.Hide();
-            /*call to url
-            var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/add_debit_amount/");
-            httpWebRequest.ContentType = "application/json";
-            httpWebRequest.Method = "POST";
-            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/list_of_accounting_years/");
+            try
             {
-                var result = streamReader.ReadToEnd();
-                MessageBox.Show(result);
-            }*/
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
+                httpWebRequest.CookieContainer = new CookieContainer();
+                httpWebRequest.CookieContainer.Add(new Uri(GlobalClass.url + "/list_of_accounting_years/"), new Cookie("sessionid", GlobalClass.session));
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    //MessageBox.Show(result);
+                    JObject obj = JObject.Parse(result);
+                    //var data = "";
+
+                    /*JToken accYr= (JToken)(obj["AccYearsList"][0]);
+                    MessageBox.Show(Convert.ToString(accYr["start_date"]));*/
+                    string str1 = (Convert.ToString(obj["AccYearsList"]));
+                    //MessageBox.Show(str1);
+                    int counter = 0;
+                    //JToken accYr;
+                    foreach (var ch in str1)
+                    {
+                        if (ch == '{')
+                            counter++;
+                    }
+                    //MessageBox.Show(Convert.ToString(counter));
+                    if (counter > 0)
+                    {
+                        for (int i = 0; i < counter; i++)
+                        {
+
+                            start_date = GlobalClass.origin.AddMilliseconds(Int64.Parse(Convert.ToString((JToken)(obj["AccYearsList"][i])["start_date"])));
+                            //int_data = Int32.Parse(Convert.ToString((JToken)(obj["AccYearsList"][i])["end_date"]));
+                            end_date = GlobalClass.origin.AddMilliseconds(Int64.Parse(Convert.ToString((JToken)(obj["AccYearsList"][i])["end_date"])));
+                            //d.ToShortDateString();
+                            //MessageBox.Show(start_date.ToShortDateString()+" " + end_date.ToShortDateString());
+                            if (DateTime.Now > start_date && DateTime.Now < end_date)
+                            {
+                                var httpWebRequest3 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/show_account_names/");
+                                httpWebRequest3.ContentType = "application/json";
+                                httpWebRequest3.Method = "POST";
+                                httpWebRequest3.CookieContainer = new CookieContainer();
+                                httpWebRequest3.CookieContainer.Add(new Uri(GlobalClass.url + "/show_account_names/"), new Cookie("sessionid", GlobalClass.session));
+                                using (var streamWriter = new StreamWriter(httpWebRequest3.GetRequestStream()))
+                                {
+                                    GlobalClass.start_date = Convert.ToInt64((Convert.ToDateTime(start_date) - GlobalClass.origin).TotalMilliseconds);
+                                    GlobalClass.end_date = Convert.ToInt64((Convert.ToDateTime(end_date) - GlobalClass.origin).TotalMilliseconds);
+                                    string json = "{\"start_date\":" + GlobalClass.start_date + "," +
+                                                      "\"end_date\":" + GlobalClass.end_date + "}";
+                                    //MessageBox.Show(json);
+                                    streamWriter.Write(json);
+                                    streamWriter.Flush();
+                                    streamWriter.Close();
+                                }
+                                var httpResponse3 = (HttpWebResponse)httpWebRequest3.GetResponse();
+                                try
+                                {
+                                    //dt.Columns.Add("Created At");
+                                    //dt.Columns.Add("Account Name");
+                                    using (var streamReader3 = new StreamReader(httpResponse3.GetResponseStream()))
+                                    {
+                                        var result3 = streamReader3.ReadToEnd();
+                                        MessageBox.Show(result3);
+                                    }
+                                    //data = Convert.ToString(obj["AccYearsList"][++i]);
+                                    //data = Regex.Match(data, @"\d+").Value;
+                                    //int_data = Int32.Parse(data);
+                                    //d1 = origin.AddSeconds(int_data);
+
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("error");
+                                }
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("error");
+            }
+                
+            
+
+
+
+                //call to url to get account id
+                /*
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/show_account_names/");
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
+                httpWebRequest.CookieContainer = new CookieContainer();
+                httpWebRequest.CookieContainer.Add(new Uri(GlobalClass.url + "/show_account_names/"), new Cookie("sessionid", GlobalClass.session));
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    MessageBox.Show(result);
+                }*/
+
+                /*call to url for credit
+                var httpWebRequest1 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/credit_transaction_for_cash_account/");
+                httpWebRequest1.ContentType = "application/json";
+                httpWebRequest1.Method = "POST";
+                httpWebRequest1.CookieContainer = new CookieContainer();
+                httpWebRequest1.CookieContainer.Add(new Uri(GlobalClass.url + "/credit_transaction_for_cash_account/"), new Cookie("sessionid", GlobalClass.session));
+                var httpResponse1 = (HttpWebResponse)httpWebRequest1.GetResponse();
+                using (var streamReader1 = new StreamReader(httpResponse1.GetResponseStream()))
+                {
+                    var result1 = streamReader1.ReadToEnd();
+                    MessageBox.Show(result1);
+                }
+                //call to url for debit
+                var httpWebRequest2 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/debit_transaction_for_cash_account/");
+                httpWebRequest2.ContentType = "application/json";
+                httpWebRequest2.Method = "POST";
+                httpWebRequest2.CookieContainer = new CookieContainer();
+                httpWebRequest2.CookieContainer.Add(new Uri(GlobalClass.url + "/debit_transaction_for_cash_account/"), new Cookie("sessionid", GlobalClass.session));
+                var httpResponse2 = (HttpWebResponse)httpWebRequest2.GetResponse();
+                using (var streamReader2 = new StreamReader(httpResponse2.GetResponseStream()))
+                {
+                    var result2 = streamReader2.ReadToEnd();
+                    MessageBox.Show(result2);
+                }
+                */
         }
 
         private void comboBox1_TextUpdate(object sender, EventArgs e)
