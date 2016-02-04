@@ -22,13 +22,13 @@ using System.Text.RegularExpressions;
 
 namespace saEdu
 {
-    public partial class create_user : Form
+    public partial class create_account : Form
     {
         long int_data;
         DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
         int group_index,acc_index;
         WebClient client = new WebClient();
-        public create_user()
+        public create_account()
         {
             InitializeComponent();
         }

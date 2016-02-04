@@ -101,7 +101,7 @@ namespace saEdu
                     using (var streamReader3 = new StreamReader(httpResponse3.GetResponseStream()))
                     {
                         var result3 = streamReader3.ReadToEnd();
-                        //MessageBox.Show(result3);
+                        MessageBox.Show(result3);
                         jt = JToken.Parse(result3);
                         credit_amt.Text = Convert.ToString(jt["all_credit"]);
                         debit_amt.Text = Convert.ToString(jt["all_debit"]);

@@ -1,6 +1,6 @@
 ﻿namespace saEdu
 {
-    partial class Form3
+    partial class new_user_registration
     {
         /// <summary>
         /// Required designer variable.

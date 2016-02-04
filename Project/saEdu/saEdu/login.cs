@@ -52,10 +52,8 @@ namespace saEdu
 
                 using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
-                    string user = log_user.Text;
-                    string pass = log_pass.Text;
-                    string json = "{\"username\":\"" + user + "\"," +
-                                   "\"password\":\"" + pass + "\"}";
+                    string json = "{\"username\":\"" + log_user.Text + "\"," +
+                                   "\"password\":\"" + log_pass.Text + "\"}";
                     streamWriter.Write(json);
                     streamWriter.Flush();
                     streamWriter.Close();
@@ -146,7 +144,7 @@ namespace saEdu
                 MessageBox.Show("Unable to connect");
             }
             */
-            Form3 f3 = new Form3();
+            new_user_registration f3 = new new_user_registration();
             f3.Show();
             this.Hide();
         }

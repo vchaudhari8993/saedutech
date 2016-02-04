@@ -19,11 +19,11 @@ using System.Web.Script.Serialization;
 
 namespace saEdu
 {
-    public partial class Form3 : Form
+    public partial class new_user_registration : Form
     {
         
         WebClient client = new WebClient();
-        public Form3()
+        public new_user_registration()
         {
             InitializeComponent();
         }
@@ -113,7 +113,7 @@ namespace saEdu
                     JObject userInfo = JObject.Parse(json);
                     //string newUserstr = JsonConvert.SerializeObject(nv);
                     //JObject newUser = JObject.Parse(newUserstr);
-                    //MessageBox.Show(Convert.ToString(newUser.GetType()));
+                    //MessageBox.Show(Convert.ToString(userInfo));
                     streamWriter.Write(userInfo);
                     streamWriter.Flush();
                     streamWriter.Close();

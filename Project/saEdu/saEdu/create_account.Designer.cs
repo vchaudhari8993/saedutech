@@ -1,6 +1,6 @@
 ﻿namespace saEdu
 {
-    partial class create_user
+    partial class create_account
     {
         /// <summary>
         /// Required designer variable.

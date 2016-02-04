@@ -8,7 +8,6 @@ E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.pdb
 E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.login.resources
 E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.dashboard.resources
 E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.admin_panel.resources
-E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.create_user.resources
 E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.reports.resources
 E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.user_acc_detail.resources
 E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.user_acc.resources
@@ -16,7 +15,6 @@ E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.cr_dr_detail.resources
 E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\Interop.CompSvcsAtlSupport.dll
 E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.csproj.ResolveComReference.cache
 E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\Interop.MSTSCLib.dll
-E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.Form3.resources
 E:\WORK\Project\saEdu\saEdu\bin\Debug\saEdu.exe.config
 E:\WORK\Project\saEdu\saEdu\bin\Debug\EntityFramework.dll
 E:\WORK\Project\saEdu\saEdu\bin\Debug\EntityFramework.SqlServer.dll
@@ -54,3 +52,5 @@ E:\WORK\Project\saEdu\saEdu\bin\Debug\Json.dll
 E:\WORK\Project\saEdu\saEdu\bin\Debug\Json.pdb
 E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.newUserAcc.resources
 E:\WORK\Project\saEdu\saEdu\bin\Debug\RequestStrap.dll
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.new_user_registration.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.create_account.resources

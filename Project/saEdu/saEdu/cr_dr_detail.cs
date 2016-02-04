@@ -54,7 +54,7 @@ namespace saEdu
 
         private void roundButton2_Click(object sender, EventArgs e)
         {
-            create_user n = new create_user();
+            create_account n = new create_account();
             n.Show();
             this.Hide();
         }
