@@ -65,5 +65,10 @@ namespace saEdu
             obj.Show();
             this.Hide();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

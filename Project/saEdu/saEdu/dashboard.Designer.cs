@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +51,45 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(359, 351);
             this.panel1.TabIndex = 0;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.White;
+            this.button8.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.button8.Location = new System.Drawing.Point(16, 132);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(325, 95);
+            this.button8.TabIndex = 1;
+            this.button8.Text = "EVENT ACCOUNTING";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.White;
+            this.button6.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.button6.Location = new System.Drawing.Point(16, 21);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(325, 95);
+            this.button6.TabIndex = 0;
+            this.button6.Text = "MY ACCOUNT";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.White;
+            this.button5.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.button5.Location = new System.Drawing.Point(16, 242);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(325, 95);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "OTHER ACCOUNTS";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel2
             // 
@@ -86,45 +125,6 @@
             this.button4.Text = "EXIT";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click_1);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.button5.Location = new System.Drawing.Point(16, 242);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(325, 95);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "OTHER ACCOUNTS";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button4_Click_1);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.button6.Location = new System.Drawing.Point(16, 21);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(325, 95);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "MY ACCOUNT";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.White;
-            this.button8.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.button8.Location = new System.Drawing.Point(16, 132);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(325, 95);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "EVENT ACCOUNTING";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // dashboard
             // 

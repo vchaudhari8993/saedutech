@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -79,7 +81,7 @@
             this.button4.Location = new System.Drawing.Point(78, 576);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(428, 41);
-            this.button4.TabIndex = 15;
+            this.button4.TabIndex = 11;
             this.button4.Text = "SUBMIT";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button2_Click);
@@ -124,9 +126,10 @@
             this.transaction_type.Location = new System.Drawing.Point(379, 49);
             this.transaction_type.Name = "transaction_type";
             this.transaction_type.Size = new System.Drawing.Size(209, 31);
-            this.transaction_type.TabIndex = 0;
+            this.transaction_type.TabIndex = 1;
             this.transaction_type.Text = "Select Transaction Type";
             this.transaction_type.SelectedItemChanged += new System.EventHandler(this.domainUpDown1_SelectedItemChanged_1);
+            this.transaction_type.Leave += new System.EventHandler(this.transaction_type_Leave);
             // 
             // get_date
             // 
@@ -134,8 +137,9 @@
             this.get_date.Location = new System.Drawing.Point(261, 49);
             this.get_date.Name = "get_date";
             this.get_date.Size = new System.Drawing.Size(19, 31);
-            this.get_date.TabIndex = 1;
+            this.get_date.TabIndex = 0;
             this.get_date.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged_1);
+            this.get_date.Leave += new System.EventHandler(this.get_date_Leave);
             // 
             // admin_opt
             // 
@@ -153,11 +157,12 @@
             // transaction_description
             // 
             this.transaction_description.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transaction_description.Location = new System.Drawing.Point(9, 142);
+            this.transaction_description.Location = new System.Drawing.Point(15, 207);
             this.transaction_description.Multiline = true;
             this.transaction_description.Name = "transaction_description";
             this.transaction_description.Size = new System.Drawing.Size(579, 64);
-            this.transaction_description.TabIndex = 34;
+            this.transaction_description.TabIndex = 7;
+            this.transaction_description.Leave += new System.EventHandler(this.transaction_description_Leave);
             // 
             // button5
             // 
@@ -166,7 +171,7 @@
             this.button5.Location = new System.Drawing.Point(300, 529);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(206, 41);
-            this.button5.TabIndex = 39;
+            this.button5.TabIndex = 10;
             this.button5.Text = "Next";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.button5_KeyPress);
@@ -178,7 +183,7 @@
             this.submit_transaction.Location = new System.Drawing.Point(78, 470);
             this.submit_transaction.Name = "submit_transaction";
             this.submit_transaction.Size = new System.Drawing.Size(425, 41);
-            this.submit_transaction.TabIndex = 35;
+            this.submit_transaction.TabIndex = 8;
             this.submit_transaction.Text = "SUBMIT";
             this.submit_transaction.UseVisualStyleBackColor = false;
             this.submit_transaction.Click += new System.EventHandler(this.submit_transaction_Click);
@@ -190,7 +195,7 @@
             this.button3.Location = new System.Drawing.Point(78, 529);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(202, 41);
-            this.button3.TabIndex = 38;
+            this.button3.TabIndex = 9;
             this.button3.Text = "Back";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
@@ -200,7 +205,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label5.Location = new System.Drawing.Point(217, 116);
+            this.label5.Location = new System.Drawing.Point(223, 181);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 23);
             this.label5.TabIndex = 40;
@@ -208,21 +213,48 @@
             // 
             // transaction_record
             // 
+            this.transaction_record.AllowUserToAddRows = false;
+            this.transaction_record.AllowUserToDeleteRows = false;
+            this.transaction_record.AllowUserToResizeColumns = false;
+            this.transaction_record.AllowUserToResizeRows = false;
+            this.transaction_record.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.transaction_record.BackgroundColor = System.Drawing.Color.White;
+            this.transaction_record.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.transaction_record.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.transaction_record.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.transaction_record.Location = new System.Drawing.Point(9, 277);
+            this.transaction_record.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.transaction_record.DefaultCellStyle = dataGridViewCellStyle2;
+            this.transaction_record.Location = new System.Drawing.Point(5, 277);
             this.transaction_record.Name = "transaction_record";
+            this.transaction_record.ReadOnly = true;
             this.transaction_record.RowHeadersVisible = false;
-            this.transaction_record.Size = new System.Drawing.Size(590, 103);
+            this.transaction_record.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.transaction_record.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.transaction_record.Size = new System.Drawing.Size(594, 187);
             this.transaction_record.TabIndex = 42;
             // 
             // add_transaction
             // 
             this.add_transaction.BackColor = System.Drawing.Color.White;
             this.add_transaction.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_transaction.Location = new System.Drawing.Point(124, 216);
+            this.add_transaction.Location = new System.Drawing.Point(96, 119);
             this.add_transaction.Name = "add_transaction";
             this.add_transaction.Size = new System.Drawing.Size(333, 55);
-            this.add_transaction.TabIndex = 58;
+            this.add_transaction.TabIndex = 6;
             this.add_transaction.Text = "Add Entry";
             this.add_transaction.UseVisualStyleBackColor = false;
             this.add_transaction.Click += new System.EventHandler(this.add_transaction_Click);
@@ -234,7 +266,8 @@
             this.acc_name1.Location = new System.Drawing.Point(47, 86);
             this.acc_name1.Name = "acc_name1";
             this.acc_name1.Size = new System.Drawing.Size(167, 27);
-            this.acc_name1.TabIndex = 55;
+            this.acc_name1.TabIndex = 3;
+            this.acc_name1.Leave += new System.EventHandler(this.acc_name1_Leave);
             // 
             // transaction_type1
             // 
@@ -244,7 +277,7 @@
             this.transaction_type1.Location = new System.Drawing.Point(9, 84);
             this.transaction_type1.Name = "transaction_type1";
             this.transaction_type1.Size = new System.Drawing.Size(32, 31);
-            this.transaction_type1.TabIndex = 54;
+            this.transaction_type1.TabIndex = 2;
             this.transaction_type1.SelectedItemChanged += new System.EventHandler(this.transaction_type1_SelectedItemChanged);
             this.transaction_type1.Leave += new System.EventHandler(this.transaction_type1_Leave);
             // 
@@ -265,9 +298,10 @@
             this.cr_amt1.Multiline = true;
             this.cr_amt1.Name = "cr_amt1";
             this.cr_amt1.Size = new System.Drawing.Size(97, 29);
-            this.cr_amt1.TabIndex = 56;
+            this.cr_amt1.TabIndex = 4;
             this.cr_amt1.TextChanged += new System.EventHandler(this.cr_amt1_TextChanged);
             this.cr_amt1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cr_amt1_KeyPress);
+            this.cr_amt1.Leave += new System.EventHandler(this.cr_amt1_Leave);
             // 
             // label11
             // 
@@ -286,8 +320,9 @@
             this.dr_amt1.Multiline = true;
             this.dr_amt1.Name = "dr_amt1";
             this.dr_amt1.Size = new System.Drawing.Size(97, 29);
-            this.dr_amt1.TabIndex = 57;
-            this.dr_amt1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cr_amt1_KeyPress);
+            this.dr_amt1.TabIndex = 5;
+            this.dr_amt1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dr_amt1_KeyPress);
+            this.dr_amt1.Leave += new System.EventHandler(this.dr_amt1_Leave);
             // 
             // admin_panel
             // 
