@@ -17,6 +17,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Web.Script.Serialization;
 using System.Text.RegularExpressions;
+using System.Json;
 
 namespace saEdu
 {
@@ -101,7 +102,10 @@ namespace saEdu
                     using (var streamReader3 = new StreamReader(httpResponse3.GetResponseStream()))
                     {
                         var result3 = streamReader3.ReadToEnd();
-                        MessageBox.Show(result3);
+                        //MessageBox.Show(result3);
+                        //Object o = JsonConvert.DeserializeObject<List<Dictionary<string, Dictionary<string, string>>>>(result3);
+                        //MessageBox.Show(Convert.ToString(o.GetType()));
+                        
                         jt = JToken.Parse(result3);
                         credit_amt.Text = Convert.ToString(jt["all_credit"]);
                         debit_amt.Text = Convert.ToString(jt["all_debit"]);
@@ -110,8 +114,6 @@ namespace saEdu
                         JObject obj = JObject.Parse(result3);
                         string str1 = (Convert.ToString(obj["account_obj_list"]));
                         //MessageBox.Show(str1);
-
-                        
                         foreach (var ch in str1)
                         {
                             if (ch == '{')

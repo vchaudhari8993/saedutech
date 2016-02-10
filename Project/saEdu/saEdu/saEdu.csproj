@@ -81,6 +81,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="acc_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="acc_list.Designer.cs">
+      <DependentUpon>acc_list.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -90,8 +96,21 @@
     <Compile Include="Class4.cs" />
     <Compile Include="Class5.cs" />
     <Compile Include="Class6.cs" />
-    <Compile Include="ComboBoxClass.cs" />
+    <Compile Include="comboAcc.cs" />
     <Compile Include="comboTest.cs" />
+    <Compile Include="groupList.cs" />
+    <Compile Include="select_financial_yr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="select_financial_yr.Designer.cs">
+      <DependentUpon>select_financial_yr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="show_transaction_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="show_transaction_details.Designer.cs">
+      <DependentUpon>show_transaction_details.cs</DependentUpon>
+    </Compile>
     <Compile Include="user_acc_detail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,11 +148,17 @@
       <DependentUpon>dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="numericButton.cs" />
-    <Compile Include="user_view.cs">
+    <Compile Include="user_option.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="user_view.Designer.cs">
-      <DependentUpon>user_view.cs</DependentUpon>
+    <Compile Include="user_option.Designer.cs">
+      <DependentUpon>user_option.cs</DependentUpon>
+    </Compile>
+    <Compile Include="list_of_accyr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="list_of_accyr.Designer.cs">
+      <DependentUpon>list_of_accyr.cs</DependentUpon>
     </Compile>
     <Compile Include="admin_panel.cs">
       <SubType>Form</SubType>
@@ -155,8 +180,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="acc_list.resx">
+      <DependentUpon>acc_list.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cr_dr_detail.resx">
       <DependentUpon>cr_dr_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="select_financial_yr.resx">
+      <DependentUpon>select_financial_yr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="show_transaction_details.resx">
+      <DependentUpon>show_transaction_details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_acc_detail.resx">
       <DependentUpon>user_acc_detail.cs</DependentUpon>
@@ -173,8 +207,11 @@
     <EmbeddedResource Include="dashboard.resx">
       <DependentUpon>dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="user_view.resx">
-      <DependentUpon>user_view.cs</DependentUpon>
+    <EmbeddedResource Include="user_option.resx">
+      <DependentUpon>user_option.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="list_of_accyr.resx">
+      <DependentUpon>list_of_accyr.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="admin_panel.resx">
       <DependentUpon>admin_panel.cs</DependentUpon>

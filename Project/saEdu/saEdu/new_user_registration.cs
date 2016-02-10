@@ -30,7 +30,7 @@ namespace saEdu
 
         private void Form3_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void new_submit_Click(object sender, EventArgs e)
@@ -150,17 +150,54 @@ namespace saEdu
                 }
             }
         }
-
-        private void progressBar1_Validating(object sender, CancelEventArgs e)
-        {
-
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
             login l = new login();
             l.Show();
             this.Hide();
+        }
+
+        private void roundButton2_Click(object sender, EventArgs e)
+        {
+            
+        }
+        
+
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void new_username_Enter(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void new_mob_no_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void new_conformmob_no_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void new_pin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -49,7 +49,10 @@ namespace saEdu
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            create_account ca = new create_account();
+            ca.Show();
+            this.Hide();
+            //Application.Exit();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -69,6 +72,13 @@ namespace saEdu
         private void button5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            show_transaction_details st = new show_transaction_details();
+            st.Show();
+            this.Hide();
         }
     }
 }

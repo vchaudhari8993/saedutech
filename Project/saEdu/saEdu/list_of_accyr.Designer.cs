@@ -42,13 +42,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.roundButton4 = new RoundButton();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.serviceController1 = new System.ServiceProcess.ServiceController();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.roundButton4 = new RoundButton();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -72,7 +72,7 @@
             "Add New Account",
             "Add New Group",
             "Add New Accounting year"});
-            this.user_view_opt.Location = new System.Drawing.Point(94, 324);
+            this.user_view_opt.Location = new System.Drawing.Point(85, 313);
             this.user_view_opt.Name = "user_view_opt";
             this.user_view_opt.Size = new System.Drawing.Size(253, 31);
             this.user_view_opt.TabIndex = 13;
@@ -92,6 +92,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(393, 61);
             this.panel3.TabIndex = 11;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label2
             // 
@@ -154,40 +155,29 @@
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.White;
             this.button4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.button4.Location = new System.Drawing.Point(216, 361);
+            this.button4.Location = new System.Drawing.Point(216, 350);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(188, 30);
+            this.button4.Size = new System.Drawing.Size(188, 41);
             this.button4.TabIndex = 15;
             this.button4.Text = "Next";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.btn_next);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.White;
             this.button3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.button3.Location = new System.Drawing.Point(7, 361);
+            this.button3.Location = new System.Drawing.Point(7, 350);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(194, 30);
+            this.button3.Size = new System.Drawing.Size(194, 41);
             this.button3.TabIndex = 14;
             this.button3.Text = "Back";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // roundButton4
-            // 
-            this.roundButton4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.roundButton4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton4.ForeColor = System.Drawing.Color.White;
-            this.roundButton4.Location = new System.Drawing.Point(303, 310);
-            this.roundButton4.Name = "roundButton4";
-            this.roundButton4.Size = new System.Drawing.Size(45, 45);
-            this.roundButton4.TabIndex = 12;
-            this.roundButton4.Text = "+";
-            this.roundButton4.UseVisualStyleBackColor = false;
-            this.roundButton4.Click += new System.EventHandler(this.roundButton4_Click_1);
             // 
             // dataGridView1
             // 
@@ -228,6 +218,19 @@
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
+            // roundButton4
+            // 
+            this.roundButton4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.roundButton4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roundButton4.ForeColor = System.Drawing.Color.White;
+            this.roundButton4.Location = new System.Drawing.Point(304, 305);
+            this.roundButton4.Name = "roundButton4";
+            this.roundButton4.Size = new System.Drawing.Size(45, 45);
+            this.roundButton4.TabIndex = 12;
+            this.roundButton4.Text = "+";
+            this.roundButton4.UseVisualStyleBackColor = false;
+            this.roundButton4.Click += new System.EventHandler(this.roundButton4_Click_1);
+            // 
             // user_acc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,8 +251,8 @@
             this.Load += new System.EventHandler(this.user_view_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }

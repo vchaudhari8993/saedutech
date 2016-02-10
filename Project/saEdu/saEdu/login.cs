@@ -149,5 +149,10 @@ namespace saEdu
             f3.Show();
             this.Hide();
         }
+
+        private void forgot_pass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            
+        }
     }
 }

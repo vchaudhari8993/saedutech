@@ -229,7 +229,9 @@ namespace saEdu
 
         private void roundButton2_Click(object sender, EventArgs e)
         {
-
+            create_account c = new create_account();
+            c.Show();
+            this.Hide();
         }
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -246,13 +248,18 @@ namespace saEdu
             GlobalClass.start_date = Convert.ToInt64((Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()) - GlobalClass.origin).TotalMilliseconds);
             //int_data = Convert.ToInt64((Convert.ToDateTime(cellValue1) - GlobalClass.origin).TotalSeconds);
             GlobalClass.end_date = Convert.ToInt64((Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString()) - GlobalClass.origin).TotalMilliseconds);
-            user_acc_detail uad = new user_acc_detail();
-            uad.Show();
+            user_option uo = new user_option();
+            uo.Show();
             this.Hide();
             //MessageBox.Show(Convert.ToString(GlobalClass.start_date) + " " + Convert.ToString(GlobalClass.end_date));
             //MessageBox.Show(Convert.ToString(int_data));
             //MessageBox.Show("the row data is: "+ cellValue+" "+cellValue1);
             //"The row index = " + dataIndexNo.ToString() + " and 
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

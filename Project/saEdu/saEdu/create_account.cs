@@ -24,9 +24,10 @@ namespace saEdu
 {
     public partial class create_account : Form
     {
+        //comboAcc c;
         long int_data;
         DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
-        int group_index,acc_index;
+        //int group_index,acc_index;
         WebClient client = new WebClient();
         public create_account()
         {
@@ -59,8 +60,88 @@ namespace saEdu
 
         private void Form6_Load(object sender, EventArgs e)
         {
-            reg_date_from.Text = dateTimePicker1.Value.ToShortDateString();
-            grp_dropdown.Hide();
+            try
+            {
+                //reg_date_from.Text = dateTimePicker1.Value.ToShortDateString();
+                grp_dropdown.Hide();
+                //string grup_name;
+
+                var httpWebRequest1 = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/get_accounttype_from_db/");
+                httpWebRequest1.ContentType = "application/json";
+                httpWebRequest1.Method = "POST";
+                httpWebRequest1.CookieContainer = new CookieContainer();
+                httpWebRequest1.CookieContainer.Add(new Uri(GlobalClass.url + "/get_accounttype_from_db/"), new Cookie("sessionid", GlobalClass.session));
+
+                var httpResponse1 = (HttpWebResponse)httpWebRequest1.GetResponse();
+                using (var streamReader1 = new StreamReader(httpResponse1.GetResponseStream()))
+                {
+                    var result1 = streamReader1.ReadToEnd();
+                    //MessageBox.Show(result1);
+                    JObject obj1 = JObject.Parse(result1);
+                    //MessageBox.Show(Convert.ToString(obj1));
+                    string str2 = (Convert.ToString(obj1["accTypeList"]));
+                    int counter1 = 0;
+                    
+                    foreach (var ch in str2)
+                    {
+                        if (ch == '{')
+                            counter1++;
+                    }
+                    if (counter1 > 0)
+                    {
+                        //MessageBox.Show(Convert.ToString(counter1));
+                        JObject j1;
+                        for (int i1 = 0; i1 < counter1; i1++)
+                        {
+                            j1 = JObject.Parse(Convert.ToString((JToken)(obj1["accTypeList"])[i1]));
+                            //MessageBox.Show(Convert.ToString((JToken)(j1["id"])));
+                            //reg_acc_type.Items.Add(new comboAcc(Convert.ToString((JToken)(j1["id"]))));
+                            //grup_name = Convert.ToString((JToken)(obj1["accTypeList"][i1])["choice_name"]);
+                            //MessageBox.Show(Convert.ToString((JToken)(obj1["accTypeList"])[i1]));
+                            reg_acc_type.Items.Add(new comboAcc(Convert.ToString((JToken)(obj1["accTypeList"])[i1])));
+                            //reg_acc_type.Items.Add(grup_name);
+                        }
+                    }
+                }
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/get_groups_from_db/");
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
+                httpWebRequest.CookieContainer = new CookieContainer();
+                httpWebRequest.CookieContainer.Add(new Uri(GlobalClass.url + "/get_groups_from_db/"), new Cookie("sessionid", GlobalClass.session));
+
+                try
+                {
+                    var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        JObject obj1 = JObject.Parse(result);
+                        //MessageBox.Show(result);
+                        string str2 = (Convert.ToString(obj1["accGroupList"]));
+                        //MessageBox.Show(str2);
+                        int counter1 = 0;
+                        foreach (var ch in str2)
+                        {
+                            if (ch == '{')
+                                counter1++;
+                        }
+                        if (counter1 > 0)
+                        {
+                            for (int i1 = 0; i1 < counter1; i1++)
+                            {
+                                //MessageBox.Show(Convert.ToString((JToken)(obj1["accGroupList"][i1])));
+                                listBox1.Items.Add(new groupList(Convert.ToString((JToken)(obj1["accGroupList"])[i1])));
+                            }
+                        }
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("No respose from server");
+                }
+            }
+            
+            //listBox1.Items.Add();
             //reg_combo_day.Text= System.DateTime.DaysInMonth(reg_combo_year,reg_combo_mon.SelectedIndex)
 
             /*
@@ -99,6 +180,10 @@ namespace saEdu
             //comboBox2.DataSource = dates;
             comboBox3.DataSource = dates;
             */
+            catch
+            {
+
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -113,13 +198,7 @@ namespace saEdu
 
         private void domainUpDown1_SelectedItemChanged(object sender, EventArgs e)
         {
-            string value = sender.ToString();
-            if (value == "System.Windows.Forms.DomainUpDown, Items.Count: 3, SelectedIndex: 0")
-                this.BackColor = Color.Azure;
-            else if (value == "System.Windows.Forms.DomainUpDown, Items.Count: 3, SelectedIndex: 1")
-                this.BackColor = Color.LightSalmon;
-            else
-                this.BackColor = Color.Khaki;
+            
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -157,18 +236,21 @@ namespace saEdu
 
         private void button4_Click(object sender, EventArgs e)
         {
+            listBox1.Focus();
             grp_dropdown.Show();
+            //grp_dropdown.Focus();
+            listBox1.Focus();
         }
 
         private void button4_Leave(object sender, EventArgs e)
         {
-            grp_dropdown.Hide();
+            
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             acc_grp.Text = Convert.ToString(listBox1.SelectedItem);
-            group_index = listBox1.SelectedIndex;
+            //group_index = listBox1.SelectedIndex;
             //MessageBox.Show(Convert.ToString(group_index));
             //acc_grp.Text = sender.ToString();
             //reg_name.Text = sender.ToString();
@@ -221,19 +303,12 @@ namespace saEdu
             
         }
 
-        private void reg_email_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void reg_acc_period_Enter(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void reg_contact_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+
+            if (/*reg_contact.Text.Length < 10 && */!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)/* && e.KeyChar == (char)Keys.Back*/)
             {
                 e.Handled = true;
             }
@@ -241,16 +316,16 @@ namespace saEdu
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            //reg_date_from.Text = Convert.ToString(dateTimePicker1.Value.DayOfWeek);
-            reg_date_from.Text = dateTimePicker1.Value.ToShortDateString();
+            ////reg_date_from.Text = Convert.ToString(dateTimePicker1.Value.DayOfWeek);
+            //reg_date_from.Text = dateTimePicker1.Value.ToShortDateString();
         }
 
         private void reg_date_from_TextChanged(object sender, EventArgs e)
         {
-            //code for calculating year period
-            DateTime start = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day);
-            DateTime end = start.AddMonths(12).AddDays(-1);
-            reg_acc_validity.Text = Convert.ToString(end);
+            ////code for calculating year period
+            //DateTime start = new DateTime(dateTimePicker1.Value.Year, dateTimePicker1.Value.Month, dateTimePicker1.Value.Day);
+            //DateTime end = start.AddMonths(12).AddDays(-1);
+            //reg_acc_validity.Text = Convert.ToString(end);
         }
 
         private void dateTimePicker1_Leave(object sender, EventArgs e)
@@ -270,28 +345,12 @@ namespace saEdu
 
         protected void button1_Click(object sender, EventArgs e)
         {
-            /*
-            NameValueCollection regInfo = new NameValueCollection();
-            regInfo.Add("username", reg_name.Text);
-            regInfo.Add("contact_no", reg_contact.Text);
-            regInfo.Add("email", reg_email.Text);
-            regInfo.Add("group", acc_grp.Text);
-            regInfo.Add("accounttype", reg_acc_type.Text);
-            regInfo.Add("start_date", reg_date_from.Text);
-            regInfo.Add("end_date", reg_acc_validity.Text);
-            regInfo.Add("password", password.Text);
-            string insertuser = Convert.ToString(client.UploadValues("http://192.168.1.123:8000/register_user_and_account/", "POST", regInfo));
-            client.Headers.Add("application/json", "application/json");
-            */
+            
         }
 
         private void add_acc_Click(object sender, EventArgs e)
         {
-            int_data = Convert.ToInt64((Convert.ToDateTime(reg_date_from.Text) - GlobalClass.origin).TotalMilliseconds);
-            GlobalClass.start_date = int_data;
-            int_data = Convert.ToInt64((Convert.ToDateTime(reg_acc_validity.Text) - GlobalClass.origin).TotalMilliseconds);
-            GlobalClass.end_date = int_data;
-            //MessageBox.Show(Convert.ToString(GlobalClass.start_date) + Convert.ToString(GlobalClass.end_date));
+            
             try
             {
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/create_new_user_account/");
@@ -301,9 +360,9 @@ namespace saEdu
                 httpWebRequest.CookieContainer.Add(new Uri(GlobalClass.url + "/create_new_user_account/"), new Cookie("sessionid", GlobalClass.session));
                 using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
-                    string jsondata = "{\"account_name\":\"" + reg_name.Text + "\"," +
+                    string jsondata = "{\"accountInfo\":{\"account_name\":\"" + reg_name.Text + "\"," +
                                    "\"alias\":\"" + alias.Text + "\"," +
-                                   "\"group\":" + group_index + "," +
+                                   "\"group\":" + Convert.ToString(((groupList)listBox1.SelectedItem).acc_obj) + "," +
                                    "\"firstName\":\"" + firstName.Text + "\"," +
                                    "\"lastName\":\"" + lastName.Text + "\"," +
                                    "\"addressLine1\":\"" + addLine1.Text + "\"," +
@@ -316,17 +375,14 @@ namespace saEdu
                                    "\"mobileNo0\":" + reg_contact.Text + "," +
                                    "\"mobileNo1\":" + alt_cont.Text + "," +
                                    "\"openingBalance\":" + openingBal.Text + "," +
-                                   "\"accounttype\":" + acc_index + "," +
-                                   "\"start_date\":" + GlobalClass.start_date + "," +
-                                   "\"end_date\":" + GlobalClass.end_date + "," +
-                                   "\"duration\":" + reg_acc_period.Text + "}";
-                    MessageBox.Show(jsondata);
-                    JObject newUser = JObject.Parse(jsondata);
-
-                    streamWriter.Write(newUser);
+                                   "\"accounttype\":" + Convert.ToString(((comboAcc)reg_acc_type.SelectedItem).acc_obj) + "," +
+                                   "}}";
+                    JObject accountInfo = JObject.Parse(jsondata);
+                    //MessageBox.Show(Convert.ToString(accountInfo));
+                    streamWriter.Write(accountInfo);
                     streamWriter.Flush();
                     streamWriter.Close();
-                    MessageBox.Show(Convert.ToString(newUser));
+                    //MessageBox.Show(Convert.ToString(accountInfo));
                 }
                 try
                 {
@@ -334,9 +390,9 @@ namespace saEdu
                     using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                     {
                         var result = streamReader.ReadToEnd();
-                        MessageBox.Show(result);
+                        //MessageBox.Show(result);
                         JToken jt = JToken.Parse(result);
-                        MessageBox.Show(Convert.ToString(jt["validation"]));
+                        MessageBox.Show(Convert.ToString(jt["validation"]),"Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
                 }
                 catch
@@ -360,9 +416,72 @@ namespace saEdu
 
         }
 
+        private void reg_contact_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void alt_cont_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void pin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void openingBal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if (Regex.IsMatch(openingBal.Text, @"\.\d\d"))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            select_financial_yr fy = new select_financial_yr();
+            fy.Show();
+        }
+
         private void reg_acc_type_SelectedItemChanged(object sender, EventArgs e)
         {
-            acc_index= reg_acc_type.SelectedIndex;
+            string value = sender.ToString();
+            if (value == "System.Windows.Forms.DomainUpDown, Items.Count: 3, SelectedIndex: 0")
+                this.BackColor = Color.Azure;
+            else if (value == "System.Windows.Forms.DomainUpDown, Items.Count: 3, SelectedIndex: 1")
+                this.BackColor = Color.LightSalmon;
+            else
+                this.BackColor = Color.Khaki;
+            //acc_index = reg_acc_type.SelectedIndex;
+        }
+
+        private void acc_grp_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void reg_acc_type_Enter(object sender, EventArgs e)
+        {
+            grp_dropdown.Hide();
+            reg_acc_type.Focus();
+        }
+
+        private void reg_name_Enter(object sender, EventArgs e)
+        {
+            select_financial_yr fy = new select_financial_yr();
+            fy.Show();
         }
     }
 }

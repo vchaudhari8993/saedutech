@@ -507,7 +507,7 @@ namespace saEdu
                 cr_amt1.Clear();
                 dr_amt1.Clear();
             }
-            MessageBox.Show(Convert.ToString(((comboTest)acc_name1.SelectedItem).year));
+            //MessageBox.Show(Convert.ToString(((comboTest)acc_name1.SelectedItem).year));
             acc_year[ic] =Convert.ToString(((comboTest)acc_name1.SelectedItem).year);
             accid[ic] = Convert.ToString(((comboTest)acc_name1.SelectedItem).ID);
             ic++;
@@ -546,7 +546,7 @@ namespace saEdu
                     jsonStr=jsonStr + "{\"is_debit\":\"" + Convert.ToString(transaction_record.Rows[i].Cells[2].Value).Substring(0, 1) + "\",\"amount\":" + transaction_record.Rows[i].Cells[4].Value + ",\"account\":{\"created_at\":\"" + ((comboTest)acc_name1.SelectedItem).year + "\"" +
               ",\"id\":" + ((comboTest)acc_name1.SelectedItem).ID + ",\"account_name\":\"" + transaction_record.Rows[i].Cells[3].Value + "\"}}"+
               "],\"transaction_date\":" + Convert.ToInt64((Convert.ToDateTime(get_date.Value.Date.ToString()) - GlobalClass.origin).TotalMilliseconds) + ",\"description\":\"" + transaction_description.Text + "\",\"transactiontype\":" + transaction_type.SelectedIndex + "}}";
-                    MessageBox.Show(Convert.ToString(jsonStr));
+                    //MessageBox.Show(Convert.ToString(jsonStr));
                     streamWriter.Write(jsonStr);
                     streamWriter.Flush();
                     streamWriter.Close();
