@@ -47,28 +47,12 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.debit_amt = new System.Windows.Forms.TextBox();
-            this.bank_bal = new System.Windows.Forms.TextBox();
-            this.credit_amt = new System.Windows.Forms.TextBox();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.cash_bal = new System.Windows.Forms.TextBox();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -176,13 +160,14 @@
             this.roundButton1.Text = "T+";
             this.toolTip1.SetToolTip(this.roundButton1, "Add Transaction");
             this.roundButton1.UseVisualStyleBackColor = false;
+            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.RoyalBlue;
             this.button1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(1, 503);
+            this.button1.Location = new System.Drawing.Point(1, 368);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(500, 41);
             this.button1.TabIndex = 0;
@@ -197,7 +182,7 @@
             this.panel5.Controls.Add(this.roundButton5);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.label8);
-            this.panel5.Location = new System.Drawing.Point(1, 198);
+            this.panel5.Location = new System.Drawing.Point(1, 63);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(500, 252);
             this.panel5.TabIndex = 4;
@@ -286,176 +271,12 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Available Accounts";
             // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.debit_amt);
-            this.panel4.Controls.Add(this.bank_bal);
-            this.panel4.Controls.Add(this.credit_amt);
-            this.panel4.Controls.Add(this.linkLabel4);
-            this.panel4.Controls.Add(this.cash_bal);
-            this.panel4.Controls.Add(this.linkLabel3);
-            this.panel4.Controls.Add(this.linkLabel2);
-            this.panel4.Controls.Add(this.linkLabel1);
-            this.panel4.Location = new System.Drawing.Point(1, 63);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(500, 97);
-            this.panel4.TabIndex = 3;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(344, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(20, 23);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "₹";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(342, 68);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(20, 23);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "₹";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(126, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 23);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "₹";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(344, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 23);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "₹";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(342, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(20, 23);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "₹";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(126, 17);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(20, 23);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "₹";
-            // 
-            // debit_amt
-            // 
-            this.debit_amt.Enabled = false;
-            this.debit_amt.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.debit_amt.Location = new System.Drawing.Point(370, 59);
-            this.debit_amt.Name = "debit_amt";
-            this.debit_amt.Size = new System.Drawing.Size(108, 31);
-            this.debit_amt.TabIndex = 1;
-            // 
-            // bank_bal
-            // 
-            this.bank_bal.Enabled = false;
-            this.bank_bal.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bank_bal.Location = new System.Drawing.Point(147, 59);
-            this.bank_bal.Name = "bank_bal";
-            this.bank_bal.Size = new System.Drawing.Size(96, 31);
-            this.bank_bal.TabIndex = 1;
-            // 
-            // credit_amt
-            // 
-            this.credit_amt.Enabled = false;
-            this.credit_amt.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.credit_amt.Location = new System.Drawing.Point(370, 14);
-            this.credit_amt.Name = "credit_amt";
-            this.credit_amt.Size = new System.Drawing.Size(108, 31);
-            this.credit_amt.TabIndex = 1;
-            // 
-            // linkLabel4
-            // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel4.Location = new System.Drawing.Point(254, 67);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(79, 23);
-            this.linkLabel4.TabIndex = 0;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Debitors";
-            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
-            // 
-            // cash_bal
-            // 
-            this.cash_bal.Enabled = false;
-            this.cash_bal.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cash_bal.Location = new System.Drawing.Point(147, 14);
-            this.cash_bal.Name = "cash_bal";
-            this.cash_bal.Size = new System.Drawing.Size(96, 31);
-            this.cash_bal.TabIndex = 1;
-            // 
-            // linkLabel3
-            // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel3.Location = new System.Drawing.Point(254, 22);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(84, 23);
-            this.linkLabel3.TabIndex = 0;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "Creditors";
-            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.Location = new System.Drawing.Point(7, 67);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(115, 23);
-            this.linkLabel2.TabIndex = 0;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Bank Balance";
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(7, 22);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(113, 23);
-            this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Cash Balance";
-            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.button4.Location = new System.Drawing.Point(260, 456);
+            this.button4.Location = new System.Drawing.Point(260, 321);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(220, 41);
             this.button4.TabIndex = 17;
@@ -467,7 +288,7 @@
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.button3.Location = new System.Drawing.Point(18, 456);
+            this.button3.Location = new System.Drawing.Point(18, 321);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(227, 41);
             this.button3.TabIndex = 16;
@@ -481,12 +302,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(503, 551);
+            this.ClientSize = new System.Drawing.Size(503, 413);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.RoyalBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -500,8 +320,6 @@
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -520,21 +338,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox debit_amt;
-        private System.Windows.Forms.TextBox bank_bal;
-        private System.Windows.Forms.TextBox credit_amt;
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.TextBox cash_bal;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private RoundButton roundButton4;
         private System.Windows.Forms.ComboBox acc_detail_opt;
         private System.Windows.Forms.ComboBox user_acc_drop;

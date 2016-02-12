@@ -30,9 +30,6 @@
         {
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.roundButton3 = new RoundButton();
-            this.roundButton2 = new RoundButton();
-            this.roundButton1 = new RoundButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.info_panel = new System.Windows.Forms.Panel();
             this.new_submit = new System.Windows.Forms.Button();
@@ -66,7 +63,7 @@
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label7.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label7.Location = new System.Drawing.Point(18, 14);
+            this.label7.Location = new System.Drawing.Point(141, 16);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(142, 28);
             this.label7.TabIndex = 0;
@@ -85,51 +82,10 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // roundButton3
-            // 
-            this.roundButton3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.roundButton3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton3.ForeColor = System.Drawing.Color.White;
-            this.roundButton3.Location = new System.Drawing.Point(378, 5);
-            this.roundButton3.Name = "roundButton3";
-            this.roundButton3.Size = new System.Drawing.Size(45, 45);
-            this.roundButton3.TabIndex = 2;
-            this.roundButton3.Text = "G+";
-            this.roundButton3.UseVisualStyleBackColor = false;
-            // 
-            // roundButton2
-            // 
-            this.roundButton2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.roundButton2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton2.ForeColor = System.Drawing.Color.White;
-            this.roundButton2.Location = new System.Drawing.Point(328, 5);
-            this.roundButton2.Name = "roundButton2";
-            this.roundButton2.Size = new System.Drawing.Size(45, 45);
-            this.roundButton2.TabIndex = 1;
-            this.roundButton2.Text = "A+";
-            this.roundButton2.UseVisualStyleBackColor = false;
-            this.roundButton2.Click += new System.EventHandler(this.roundButton2_Click);
-            // 
-            // roundButton1
-            // 
-            this.roundButton1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.roundButton1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton1.ForeColor = System.Drawing.Color.White;
-            this.roundButton1.Location = new System.Drawing.Point(278, 5);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(45, 45);
-            this.roundButton1.TabIndex = 0;
-            this.roundButton1.Text = "Y+";
-            this.roundButton1.UseVisualStyleBackColor = false;
-            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.roundButton3);
-            this.panel3.Controls.Add(this.roundButton2);
-            this.panel3.Controls.Add(this.roundButton1);
             this.panel3.Controls.Add(this.label7);
             this.panel3.ForeColor = System.Drawing.Color.RoyalBlue;
             this.panel3.Location = new System.Drawing.Point(12, 6);
@@ -385,9 +341,6 @@
         #endregion
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
-        private RoundButton roundButton3;
-        private RoundButton roundButton2;
-        private RoundButton roundButton1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel info_panel;
         private System.Windows.Forms.Button new_submit;

@@ -23,7 +23,8 @@ namespace saEdu
 {
     public partial class user_acc_detail : Form
     {
-        JToken jt;
+        //JToken jt;
+        
         public user_acc_detail()
         {
             InitializeComponent();
@@ -74,8 +75,8 @@ namespace saEdu
         private void user_acc_detail_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            int counter = 0;
-
+            //int counter = 0;
+            
             ////////////////////////////////////////////////////////////////////////////////////////////////////////
             //show Account details
             try
@@ -86,69 +87,56 @@ namespace saEdu
                 httpWebRequest3.CookieContainer = new CookieContainer();
                 httpWebRequest3.CookieContainer.Add(new Uri(GlobalClass.url + "/show_account_details/"), new Cookie("sessionid", GlobalClass.session));
                 
-                using (var streamWriter = new StreamWriter(httpWebRequest3.GetRequestStream()))
-                {
-                    string json = "{\"start_date\":" + GlobalClass.start_date + "," +
-                                      "\"end_date\":" + GlobalClass.end_date + "}";
-                    streamWriter.Write(json);
-                    streamWriter.Flush();
-                    streamWriter.Close();
-                }
+                //using (var streamWriter = new StreamWriter(httpWebRequest3.GetRequestStream()))
+                //{
+                //    string json = "{\"start_date\":" + GlobalClass.start_date + "," +
+                //                      "\"end_date\":" + GlobalClass.end_date + "}";
+                //    streamWriter.Write(json);
+                //    streamWriter.Flush();
+                //    streamWriter.Close();
+                //}
                 var httpResponse3 = (HttpWebResponse)httpWebRequest3.GetResponse();
                 try
                 {
-                    dt.Columns.Add("Created At");
+                    dt.Columns.Add("ID");
                     dt.Columns.Add("Account Name");
+                    dt.Columns.Add("amount");
                     using (var streamReader3 = new StreamReader(httpResponse3.GetResponseStream()))
                     {
                         var result3 = streamReader3.ReadToEnd();
                         //MessageBox.Show(result3);
-                        //Object o = JsonConvert.DeserializeObject<List<Dictionary<string, Dictionary<string, string>>>>(result3);
-                        //MessageBox.Show(Convert.ToString(o.GetType()));
-                        
-                        jt = JToken.Parse(result3);
-                        credit_amt.Text = Convert.ToString(jt["all_credit"]);
-                        debit_amt.Text = Convert.ToString(jt["all_debit"]);
-                        cash_bal.Text = Convert.ToString(jt["cash_balance"]);
-                        bank_bal.Text = Convert.ToString(jt["bank_balance"]);
                         JObject obj = JObject.Parse(result3);
-                        string str1 = (Convert.ToString(obj["account_obj_list"]));
+
+                        
+                        //var data = "";
+
+                        /*JToken accYr= (JToken)(obj["AccYearsList"][0]);
+                        MessageBox.Show(Convert.ToString(accYr["start_date"]));*/
+                        string str1 = (Convert.ToString(obj["accountList"]));
                         //MessageBox.Show(str1);
+                        int counter = 0;
+                        //JToken accYr;
                         foreach (var ch in str1)
                         {
                             if (ch == '{')
                                 counter++;
                         }
+                        //MessageBox.Show(Convert.ToString(counter));
                         if (counter > 0)
                         {
+                            //MessageBox.Show(Convert.ToString(counter));
                             for (int i = 0; i < counter; i++)
                             {
-
-                                //accYr = (JToken)(obj["account_obj_list"][i]);
-                                //MessageBox.Show(Convert.ToString(accYr["created_at"]));
                                 
-                                ////////////////////////////////////////////////////////////
-                                //merged the value insted of variable if error then undo this
-                                ////////////////////////////////////////////////////////////
-                                //int_data = Int32.Parse(Convert.ToString((JToken)(obj["accont_obj_list"][i])["created_at"]));
-                                //d = GlobalClass.origin.AddSeconds(Int32.Parse(Convert.ToString((JToken)(obj["account_obj_list"][i])["created_at"])));
-                                //int_data = Int32.Parse(Convert.ToString((JToken)(obj["AccYearsList"][i])["end_date"]));
-                                //d1 = GlobalClass.origin.AddSeconds(Int32.Parse(Convert.ToString((JToken)(obj["AccYearsList"][i])["end_date"])));
-
-                                //data = Convert.ToString(obj["AccYearsList"][++i]);
-                                //data = Regex.Match(data, @"\d+").Value;
-                                //int_data = Int32.Parse(data);
-                                //d1 = origin.AddSeconds(int_data);
-                                
-                                dt.Rows.Add(Convert.ToString(GlobalClass.origin.AddMilliseconds(Int64.Parse(Convert.ToString((JToken)(obj["account_obj_list"][i])["created_at"])))), Convert.ToString((JToken)(obj["account_obj_list"][i])["account_name"]));
+                                dt.Rows.Add(Convert.ToString((JToken)(obj["accountList"][i])["id"]), Convert.ToString((JToken)(obj["accountList"][i])["account_name"]), Convert.ToString((JToken)(obj["accountList"][i])["amount"]));
                                 dataGridView1.DataSource = dt;
                             }
                         }
                         else
                         {
-                            //dt.Rows.Add("No Data found for your account","hello");
+                            MessageBox.Show("No Data found for your account");
                         }
-                        
+
                     }
                 }
                 catch
@@ -182,7 +170,16 @@ namespace saEdu
         }
         private void roundButton2_Click(object sender, EventArgs e)
         {
+            create_account c = new create_account();
+            c.Show();
+            this.Hide();
+        }
 
+        private void roundButton1_Click(object sender, EventArgs e)
+        {
+            admin_panel a = new admin_panel();
+            a.Show();
+            this.Hide();
         }
     }
 }

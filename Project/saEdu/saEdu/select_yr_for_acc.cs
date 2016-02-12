@@ -22,44 +22,42 @@ using System.Json;
 
 namespace saEdu
 {
-    public partial class acc_list : Form
+    public partial class select_yr_for_acc : Form
     {
-        public acc_list()
+        public select_yr_for_acc()
         {
             InitializeComponent();
         }
 
-        private void acc_list_Load(object sender, EventArgs e)
+        private void select_yr_for_acc_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            DateTime d;
+            DateTime d, d1;
 
             //bool val1 = (System.Web.HttpContext.Current.User != null) && System.Web.HttpContext.Current.User.Identity.IsAuthenticated;
 
             //AuthenticationManager.Authenticate("",)
             try
             {
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/show_account_names/");
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create(GlobalClass.url + "/list_of_accounting_years/");
 
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "POST";
                 httpWebRequest.CookieContainer = new CookieContainer();
-                httpWebRequest.CookieContainer.Add(new Uri(GlobalClass.url + "/show_account_names/"), new Cookie("sessionid", GlobalClass.session));
+                httpWebRequest.CookieContainer.Add(new Uri(GlobalClass.url + "/list_of_accounting_years/"), new Cookie("sessionid", GlobalClass.session));
                 var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
                     var result = streamReader.ReadToEnd();
-                    //MessageBox.Show(result);
                     JObject obj = JObject.Parse(result);
-                
-                    dt.Columns.Add("Created At");
-                    dt.Columns.Add("Account Name");
+                    dt.Columns.Add("Start Date");
+                    dt.Columns.Add("End Date");
                     //var data = "";
 
                     /*JToken accYr= (JToken)(obj["AccYearsList"][0]);
                     MessageBox.Show(Convert.ToString(accYr["start_date"]));*/
-                    string str1 = (Convert.ToString(obj["account_obj_list"]));
-                
+                    string str1 = (Convert.ToString(obj["AccYearsList"]));
+                    //MessageBox.Show(str1);
                     int counter = 0;
                     //JToken accYr;
                     foreach (var ch in str1)
@@ -69,7 +67,6 @@ namespace saEdu
                     }
                     if (counter > 0)
                     {
-                        //MessageBox.Show(Convert.ToString(counter));
                         for (int i = 0; i < counter; i++)
                         {
 
@@ -80,17 +77,16 @@ namespace saEdu
                             //merged the value insted of variable if error then undo this
                             ////////////////////////////////////////////////////////////
                             //int_data = Int32.Parse(Convert.ToString((JToken)(obj["AccYearsList"][i])["start_date"]));
-                            d = GlobalClass.origin.AddMilliseconds(Int64.Parse(Convert.ToString((JToken)(obj["account_obj_list"][i])["created_at"])));
-                        
+                            d = GlobalClass.origin.AddMilliseconds(Int64.Parse(Convert.ToString((JToken)(obj["AccYearsList"][i])["start_date"])));
                             //int_data = Int32.Parse(Convert.ToString((JToken)(obj["AccYearsList"][i])["end_date"]));
-                        
+                            d1 = GlobalClass.origin.AddMilliseconds(Int64.Parse(Convert.ToString((JToken)(obj["AccYearsList"][i])["end_date"])));
 
                             //data = Convert.ToString(obj["AccYearsList"][++i]);
                             //data = Regex.Match(data, @"\d+").Value;
                             //int_data = Int32.Parse(data);
                             //d1 = origin.AddSeconds(int_data);
 
-                            dt.Rows.Add(d.ToShortDateString(), Convert.ToString((JToken)(obj["account_obj_list"][i])["account_name"]));
+                            dt.Rows.Add(d.ToShortDateString(), d1.ToShortDateString());
                             dataGridView1.DataSource = dt;
                         }
                     }
@@ -108,18 +104,10 @@ namespace saEdu
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void roundButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            user_option u = new user_option();
-            u.Show();
+            GlobalClass.start_date = Convert.ToInt64((Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()) - GlobalClass.origin).TotalMilliseconds);
+            //GlobalClass.end_date = Convert.ToInt64((Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString()) - GlobalClass.origin).TotalMilliseconds);
+            show_accList aa = new show_accList();
+            aa.Show();
             this.Hide();
         }
     }

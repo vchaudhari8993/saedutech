@@ -60,3 +60,9 @@ E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.acc_list.resources
 E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.user_option.resources
 E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.show_transaction_details.resources
 E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.select_financial_yr.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.edit_acc.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.select_yr.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.show_trasaction_yrwise.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.show_accList.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.show_transaction_accountwise.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.select_yr_for_acc.resources

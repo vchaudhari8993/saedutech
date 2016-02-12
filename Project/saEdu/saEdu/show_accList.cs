@@ -14,22 +14,20 @@ using System.Collections;
 using System.Web;
 using ExtensionMethods;
 using Newtonsoft.Json;
-using System.Web.ClientServices;
 using Newtonsoft.Json.Linq;
 using System.Web.Script.Serialization;
 using System.Text.RegularExpressions;
-using System.Json;
 
 namespace saEdu
 {
-    public partial class acc_list : Form
+    public partial class show_accList : Form
     {
-        public acc_list()
+        public show_accList()
         {
             InitializeComponent();
         }
 
-        private void acc_list_Load(object sender, EventArgs e)
+        private void show_accList_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
             DateTime d;
@@ -51,15 +49,16 @@ namespace saEdu
                     var result = streamReader.ReadToEnd();
                     //MessageBox.Show(result);
                     JObject obj = JObject.Parse(result);
-                
+
                     dt.Columns.Add("Created At");
                     dt.Columns.Add("Account Name");
+                    dt.Columns.Add("ID");
                     //var data = "";
 
                     /*JToken accYr= (JToken)(obj["AccYearsList"][0]);
                     MessageBox.Show(Convert.ToString(accYr["start_date"]));*/
                     string str1 = (Convert.ToString(obj["account_obj_list"]));
-                
+
                     int counter = 0;
                     //JToken accYr;
                     foreach (var ch in str1)
@@ -81,17 +80,19 @@ namespace saEdu
                             ////////////////////////////////////////////////////////////
                             //int_data = Int32.Parse(Convert.ToString((JToken)(obj["AccYearsList"][i])["start_date"]));
                             d = GlobalClass.origin.AddMilliseconds(Int64.Parse(Convert.ToString((JToken)(obj["account_obj_list"][i])["created_at"])));
-                        
+
                             //int_data = Int32.Parse(Convert.ToString((JToken)(obj["AccYearsList"][i])["end_date"]));
-                        
+
 
                             //data = Convert.ToString(obj["AccYearsList"][++i]);
                             //data = Regex.Match(data, @"\d+").Value;
                             //int_data = Int32.Parse(data);
                             //d1 = origin.AddSeconds(int_data);
 
-                            dt.Rows.Add(d.ToShortDateString(), Convert.ToString((JToken)(obj["account_obj_list"][i])["account_name"]));
+                            dt.Rows.Add(d.ToShortDateString(), Convert.ToString((JToken)(obj["account_obj_list"][i])["account_name"]), Convert.ToString((JToken)(obj["account_obj_list"][i])["id"]));
                             dataGridView1.DataSource = dt;
+                            dataGridView1.Columns[2].Visible = false;
+                            dataGridView1.Columns[0].Visible = false;
                         }
                     }
                     else
@@ -108,18 +109,9 @@ namespace saEdu
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void roundButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            user_option u = new user_option();
-            u.Show();
+            GlobalClass.acc_id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+            show_transaction_accountwise at = new show_transaction_accountwise();
+            at.Show();
             this.Hide();
         }
     }

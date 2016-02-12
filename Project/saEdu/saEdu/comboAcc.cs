@@ -37,7 +37,16 @@ namespace saEdu
             str2 = "true";
             return jsonobj;
         }
+        public string get_acc_obj1(string ac_name)
+        {
+            //obj_index = index;
+            jo = JObject.Parse(jsonobj);
+            str2 = (Convert.ToString(jo["is_selected"]));
+            str2 = "true";
+            return jsonobj;
+        }
         //Override ToString method
+        
         public override string ToString()
         {
             jo = JObject.Parse(jsonobj);

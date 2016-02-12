@@ -25,10 +25,10 @@ namespace saEdu
     public partial class create_account : Form
     {
         //comboAcc c;
-        long int_data;
-        DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+        //long int_data;
+        //DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
         //int group_index,acc_index;
-        WebClient client = new WebClient();
+        //WebClient client = new WebClient();
         public create_account()
         {
             InitializeComponent();
@@ -423,7 +423,7 @@ namespace saEdu
 
         private void alt_cont_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -431,7 +431,7 @@ namespace saEdu
 
         private void pin_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }

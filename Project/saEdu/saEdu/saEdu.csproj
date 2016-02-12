@@ -94,22 +94,58 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Class4.cs" />
-    <Compile Include="Class5.cs" />
     <Compile Include="Class6.cs" />
     <Compile Include="comboAcc.cs" />
     <Compile Include="comboTest.cs" />
+    <Compile Include="edit_acc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="edit_acc.Designer.cs">
+      <DependentUpon>edit_acc.cs</DependentUpon>
+    </Compile>
     <Compile Include="groupList.cs" />
+    <Compile Include="main.cs" />
     <Compile Include="select_financial_yr.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="select_financial_yr.Designer.cs">
       <DependentUpon>select_financial_yr.cs</DependentUpon>
     </Compile>
+    <Compile Include="select_yr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="select_yr.Designer.cs">
+      <DependentUpon>select_yr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="select_yr_for_acc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="select_yr_for_acc.Designer.cs">
+      <DependentUpon>select_yr_for_acc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="show_accList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="show_accList.Designer.cs">
+      <DependentUpon>show_accList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="show_transaction_accountwise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="show_transaction_accountwise.Designer.cs">
+      <DependentUpon>show_transaction_accountwise.cs</DependentUpon>
+    </Compile>
     <Compile Include="show_transaction_details.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="show_transaction_details.Designer.cs">
       <DependentUpon>show_transaction_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="show_trasaction_yrwise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="show_trasaction_yrwise.Designer.cs">
+      <DependentUpon>show_trasaction_yrwise.cs</DependentUpon>
     </Compile>
     <Compile Include="user_acc_detail.cs">
       <SubType>Form</SubType>
@@ -186,11 +222,29 @@
     <EmbeddedResource Include="cr_dr_detail.resx">
       <DependentUpon>cr_dr_detail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="edit_acc.resx">
+      <DependentUpon>edit_acc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="select_financial_yr.resx">
       <DependentUpon>select_financial_yr.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="select_yr.resx">
+      <DependentUpon>select_yr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="select_yr_for_acc.resx">
+      <DependentUpon>select_yr_for_acc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="show_accList.resx">
+      <DependentUpon>show_accList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="show_transaction_accountwise.resx">
+      <DependentUpon>show_transaction_accountwise.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="show_transaction_details.resx">
       <DependentUpon>show_transaction_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="show_trasaction_yrwise.resx">
+      <DependentUpon>show_trasaction_yrwise.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="user_acc_detail.resx">
       <DependentUpon>user_acc_detail.cs</DependentUpon>

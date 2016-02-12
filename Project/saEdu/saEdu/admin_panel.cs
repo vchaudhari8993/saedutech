@@ -71,6 +71,13 @@ namespace saEdu
 
         private void Form5_Load(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Menu");
+            dt.Rows.Add("Show all Transaction");
+            dt.Rows.Add("Show transaction for Year");
+            dt.Rows.Add("Show transaction for Account");
+            dataGridView2.DataSource = dt;
+            panel1.Hide();
             //DateTime start_date, end_date;
             get_date.Focus();
             transaction_type.Enabled = false;
@@ -87,7 +94,6 @@ namespace saEdu
             transaction_table.Columns.Add("Credit/Debit");
             transaction_table.Columns.Add("Account Name");
             transaction_table.Columns.Add("Amount");
-            transaction_table.Columns.Add("Description");
             transaction_record.Hide();
             textBox4.Text = Convert.ToString(get_date.Value.DayOfWeek);
             transaction_date.Text = get_date.Value.ToShortDateString();
@@ -343,7 +349,7 @@ namespace saEdu
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -457,7 +463,7 @@ namespace saEdu
                 amount = cr_amt1.Text;
                 cr_dr = "Credit";
             }
-            transaction_table.Rows.Add(get_date.Value.ToShortDateString(), transaction_type.SelectedItem, cr_dr, acc_name1.SelectedItem, amount, transaction_description.Text);
+            transaction_table.Rows.Add(get_date.Value.ToShortDateString(), transaction_type.SelectedItem, cr_dr, acc_name1.SelectedItem, amount);
 
             //MessageBox.Show(Convert.ToString((ComboboxValue)acc_name1.SelectedItem));
 
@@ -646,6 +652,33 @@ namespace saEdu
         private void transaction_description_Leave(object sender, EventArgs e)
         {
             submit_transaction.Focus();
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            panel1.Show();
+        }
+
+        private void dataGridView2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString() == "Show all Transaction")
+            {
+                show_transaction_details st = new show_transaction_details();
+                st.Show();
+                this.Hide();
+            }
+            else if (dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString() == "Show transaction for Year")
+            {
+                select_yr ss = new select_yr();
+                ss.Show();
+                this.Hide();
+            }
+            else if (dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString() == "Show transaction for Account")
+            {
+                select_yr_for_acc sac = new select_yr_for_acc();
+                sac.Show();
+                this.Hide();
+            }
         }
 
         private void dr_amt1_KeyPress(object sender, KeyPressEventArgs e)

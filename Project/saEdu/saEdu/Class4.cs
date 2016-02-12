@@ -15,6 +15,7 @@ namespace saEdu
         public static string session;
         public static long start_date;
         public static long end_date;
+        public static int acc_id;
         public static DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
     }
 }
