@@ -100,7 +100,7 @@ namespace saEdu
                 {
                     dt.Columns.Add("ID");
                     dt.Columns.Add("Account Name");
-                    dt.Columns.Add("amount");
+                    dt.Columns.Add("Amount");
                     using (var streamReader3 = new StreamReader(httpResponse3.GetResponseStream()))
                     {
                         var result3 = streamReader3.ReadToEnd();

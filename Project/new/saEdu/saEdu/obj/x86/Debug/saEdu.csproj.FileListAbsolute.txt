@@ -1,0 +1,156 @@
+E:\WORK\Project\saEdu\saEdu\bin\Debug\saEdu.exe
+E:\WORK\Project\saEdu\saEdu\bin\Debug\saEdu.pdb
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.csprojResolveAssemblyReference.cache
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.Properties.Resources.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.csproj.GenerateResource.Cache
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.exe
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.pdb
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.login.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.dashboard.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.admin_panel.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.reports.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.user_acc_detail.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.user_acc.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.cr_dr_detail.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\Interop.CompSvcsAtlSupport.dll
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.csproj.ResolveComReference.cache
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\Interop.MSTSCLib.dll
+E:\WORK\Project\saEdu\saEdu\bin\Debug\saEdu.exe.config
+E:\WORK\Project\saEdu\saEdu\bin\Debug\EntityFramework.dll
+E:\WORK\Project\saEdu\saEdu\bin\Debug\EntityFramework.SqlServer.dll
+E:\WORK\Project\saEdu\saEdu\bin\Debug\Newtonsoft.Json.dll
+E:\WORK\Project\saEdu\saEdu\bin\Debug\EntityFramework.xml
+E:\WORK\Project\saEdu\saEdu\bin\Debug\EntityFramework.SqlServer.xml
+E:\WORK\Project\saEdu\saEdu\bin\Debug\Newtonsoft.Json.xml
+K:\WORK\Project\saEdu\saEdu\bin\Debug\saEdu.exe.config
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\Interop.CompSvcsAtlSupport.dll
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\Interop.MSTSCLib.dll
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.csproj.ResolveComReference.cache
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.exe
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.pdb
+K:\WORK\Project\saEdu\saEdu\bin\Debug\saEdu.exe
+K:\WORK\Project\saEdu\saEdu\bin\Debug\saEdu.pdb
+K:\WORK\Project\saEdu\saEdu\bin\Debug\EntityFramework.dll
+K:\WORK\Project\saEdu\saEdu\bin\Debug\EntityFramework.SqlServer.dll
+K:\WORK\Project\saEdu\saEdu\bin\Debug\Newtonsoft.Json.dll
+K:\WORK\Project\saEdu\saEdu\bin\Debug\EntityFramework.xml
+K:\WORK\Project\saEdu\saEdu\bin\Debug\EntityFramework.SqlServer.xml
+K:\WORK\Project\saEdu\saEdu\bin\Debug\Newtonsoft.Json.xml
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.csprojResolveAssemblyReference.cache
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.cr_dr_detail.resources
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.user_acc_detail.resources
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.Form3.resources
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.login.resources
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.dashboard.resources
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.user_acc.resources
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.admin_panel.resources
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.create_user.resources
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.reports.resources
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.Properties.Resources.resources
+K:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.csproj.GenerateResource.Cache
+E:\WORK\Project\saEdu\saEdu\bin\Debug\Json.dll
+E:\WORK\Project\saEdu\saEdu\bin\Debug\Json.pdb
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.newUserAcc.resources
+E:\WORK\Project\saEdu\saEdu\bin\Debug\RequestStrap.dll
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.new_user_registration.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.create_account.resources
+E:\WORK\Project\saEdu\saEdu\bin\Debug\System.Json.dll
+E:\WORK\Project\saEdu\saEdu\bin\Debug\System.Json.xml
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.acc_list.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.user_option.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.show_transaction_details.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.select_financial_yr.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.edit_acc.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.select_yr.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.show_trasaction_yrwise.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.show_accList.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.show_transaction_accountwise.resources
+E:\WORK\Project\saEdu\saEdu\obj\x86\Debug\saEdu.select_yr_for_acc.resources
+E:\WORK\new\saEdu\saEdu\bin\Debug\saEdu.exe.config
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\Interop.CompSvcsAtlSupport.dll
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\Interop.MSTSCLib.dll
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.csproj.ResolveComReference.cache
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.exe
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.pdb
+E:\WORK\new\saEdu\saEdu\bin\Debug\saEdu.exe
+E:\WORK\new\saEdu\saEdu\bin\Debug\saEdu.pdb
+E:\WORK\new\saEdu\saEdu\bin\Debug\EntityFramework.dll
+E:\WORK\new\saEdu\saEdu\bin\Debug\EntityFramework.SqlServer.dll
+E:\WORK\new\saEdu\saEdu\bin\Debug\Json.dll
+E:\WORK\new\saEdu\saEdu\bin\Debug\Newtonsoft.Json.dll
+E:\WORK\new\saEdu\saEdu\bin\Debug\RequestStrap.dll
+E:\WORK\new\saEdu\saEdu\bin\Debug\System.Json.dll
+E:\WORK\new\saEdu\saEdu\bin\Debug\EntityFramework.xml
+E:\WORK\new\saEdu\saEdu\bin\Debug\EntityFramework.SqlServer.xml
+E:\WORK\new\saEdu\saEdu\bin\Debug\Json.pdb
+E:\WORK\new\saEdu\saEdu\bin\Debug\Newtonsoft.Json.xml
+E:\WORK\new\saEdu\saEdu\bin\Debug\System.Json.xml
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.csprojResolveAssemblyReference.cache
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.acc_list.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.cr_dr_detail.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.edit_acc.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.mainForm.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.select_financial_yr.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.select_yr.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.select_yr_for_acc.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.show_accList.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.show_transaction_accountwise.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.show_transaction_details.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.show_trasaction_yrwise.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.user_acc_detail.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.new_user_registration.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.newUserAcc.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.login.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.dashboard.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.user_option.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.user_acc.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.admin_panel.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.create_account.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.reports.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.Properties.Resources.resources
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.csproj.GenerateResource.Cache
+E:\WORK\new\saEdu\saEdu\obj\x86\Debug\saEdu.viewTransaction.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\bin\Debug\saEdu.exe.config
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\Interop.CompSvcsAtlSupport.dll
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\Interop.MSTSCLib.dll
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.csproj.ResolveComReference.cache
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.exe
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.pdb
+E:\WORK\Final mudra\new\saEdu\saEdu\bin\Debug\saEdu.exe
+E:\WORK\Final mudra\new\saEdu\saEdu\bin\Debug\saEdu.pdb
+E:\WORK\Final mudra\new\saEdu\saEdu\bin\Debug\EntityFramework.dll
+E:\WORK\Final mudra\new\saEdu\saEdu\bin\Debug\EntityFramework.SqlServer.dll
+E:\WORK\Final mudra\new\saEdu\saEdu\bin\Debug\Json.dll
+E:\WORK\Final mudra\new\saEdu\saEdu\bin\Debug\Newtonsoft.Json.dll
+E:\WORK\Final mudra\new\saEdu\saEdu\bin\Debug\RequestStrap.dll
+E:\WORK\Final mudra\new\saEdu\saEdu\bin\Debug\System.Json.dll
+E:\WORK\Final mudra\new\saEdu\saEdu\bin\Debug\EntityFramework.xml
+E:\WORK\Final mudra\new\saEdu\saEdu\bin\Debug\EntityFramework.SqlServer.xml
+E:\WORK\Final mudra\new\saEdu\saEdu\bin\Debug\Json.pdb
+E:\WORK\Final mudra\new\saEdu\saEdu\bin\Debug\Newtonsoft.Json.xml
+E:\WORK\Final mudra\new\saEdu\saEdu\bin\Debug\System.Json.xml
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.csprojResolveAssemblyReference.cache
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.acc_list.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.cr_dr_detail.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.edit_acc.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.mainForm.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.select_financial_yr.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.select_yr.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.select_yr_for_acc.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.show_accList.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.show_transaction_accountwise.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.show_transaction_details.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.show_trasaction_yrwise.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.user_acc_detail.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.new_user_registration.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.newUserAcc.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.login.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.dashboard.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.user_option.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.user_acc.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.admin_panel.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.create_account.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.reports.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.Properties.Resources.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.viewTransaction.resources
+E:\WORK\Final mudra\new\saEdu\saEdu\obj\x86\Debug\saEdu.csproj.GenerateResource.Cache

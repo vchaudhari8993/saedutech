@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "saEdu", "saEdu\saEdu.csproj", "{01847D8D-0CD9-4668-97BC-51CCE5080745}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01847D8D-0CD9-4668-97BC-51CCE5080745}.Debug|x86.ActiveCfg = Debug|x86
+		{01847D8D-0CD9-4668-97BC-51CCE5080745}.Debug|x86.Build.0 = Debug|x86
+		{01847D8D-0CD9-4668-97BC-51CCE5080745}.Release|x86.ActiveCfg = Release|x86
+		{01847D8D-0CD9-4668-97BC-51CCE5080745}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

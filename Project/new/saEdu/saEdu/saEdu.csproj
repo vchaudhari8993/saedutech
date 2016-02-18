@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{01847D8D-0CD9-4668-97BC-51CCE5080745}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>saEdu</RootNamespace>
+    <AssemblyName>saEdu</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Json, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c6752e45808247c2, processorArchitecture=MSIL">
+      <HintPath>..\packages\JSON.1.0.1\lib\net40\Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RequestStrap, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RequestStrap.0.2\lib\RequestStrap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Json.4.0.20126.16343\lib\net40\System.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Web.Http.Common.4.0.20126.16343\lib\net40\System.Web.Http.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="acc_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="acc_list.Designer.cs">
+      <DependentUpon>acc_list.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Class2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Class4.cs" />
+    <Compile Include="Class6.cs" />
+    <Compile Include="comboAcc.cs" />
+    <Compile Include="comboTest.cs" />
+    <Compile Include="edit_acc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="edit_acc.Designer.cs">
+      <DependentUpon>edit_acc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="groupList.cs" />
+    <Compile Include="main.cs" />
+    <Compile Include="mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="select_financial_yr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="select_financial_yr.Designer.cs">
+      <DependentUpon>select_financial_yr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="select_yr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="select_yr.Designer.cs">
+      <DependentUpon>select_yr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="select_yr_for_acc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="select_yr_for_acc.Designer.cs">
+      <DependentUpon>select_yr_for_acc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="show_accList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="show_accList.Designer.cs">
+      <DependentUpon>show_accList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="show_transaction_accountwise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="show_transaction_accountwise.Designer.cs">
+      <DependentUpon>show_transaction_accountwise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="show_transaction_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="show_transaction_details.Designer.cs">
+      <DependentUpon>show_transaction_details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="show_trasaction_yrwise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="show_trasaction_yrwise.Designer.cs">
+      <DependentUpon>show_trasaction_yrwise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user_acc_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_acc_detail.Designer.cs">
+      <DependentUpon>user_acc_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cr_dr_detail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cr_dr_detail.Designer.cs">
+      <DependentUpon>cr_dr_detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="new_user_registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="new_user_registration.Designer.cs">
+      <DependentUpon>new_user_registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dashboard.Designer.cs">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="numericButton.cs" />
+    <Compile Include="user_option.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user_option.Designer.cs">
+      <DependentUpon>user_option.cs</DependentUpon>
+    </Compile>
+    <Compile Include="list_of_accyr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="list_of_accyr.Designer.cs">
+      <DependentUpon>list_of_accyr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin_panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin_panel.Designer.cs">
+      <DependentUpon>admin_panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="create_account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="create_account.Designer.cs">
+      <DependentUpon>create_account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reports.Designer.cs">
+      <DependentUpon>reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="viewTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewTransaction.Designer.cs">
+      <DependentUpon>viewTransaction.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="acc_list.resx">
+      <DependentUpon>acc_list.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cr_dr_detail.resx">
+      <DependentUpon>cr_dr_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="edit_acc.resx">
+      <DependentUpon>edit_acc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="select_financial_yr.resx">
+      <DependentUpon>select_financial_yr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="select_yr.resx">
+      <DependentUpon>select_yr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="select_yr_for_acc.resx">
+      <DependentUpon>select_yr_for_acc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="show_accList.resx">
+      <DependentUpon>show_accList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="show_transaction_accountwise.resx">
+      <DependentUpon>show_transaction_accountwise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="show_transaction_details.resx">
+      <DependentUpon>show_transaction_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="show_trasaction_yrwise.resx">
+      <DependentUpon>show_trasaction_yrwise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_acc_detail.resx">
+      <DependentUpon>user_acc_detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="new_user_registration.resx">
+      <DependentUpon>new_user_registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboard.resx">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user_option.resx">
+      <DependentUpon>user_option.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="list_of_accyr.resx">
+      <DependentUpon>list_of_accyr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin_panel.resx">
+      <DependentUpon>admin_panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="create_account.resx">
+      <DependentUpon>create_account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports.resx">
+      <DependentUpon>reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="viewTransaction.resx">
+      <DependentUpon>viewTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Scripts\jquery-2.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="CompSvcsAtlSupport">
+      <Guid>{2A0B7F53-9E5B-4BD3-957B-012C404C5EA3}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSTSCLib">
+      <Guid>{8C11EFA1-92C3-11D1-BC1E-00C04FA31489}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\nugetexample.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
